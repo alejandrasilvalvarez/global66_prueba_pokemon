@@ -22,10 +22,12 @@ class PokemonHeader extends StatelessWidget {
       children: <Widget>[
         ClipPath(
           clipper: _HeaderClipper(),
-          child: Container(
-            width: double.infinity,
-            height: UILayout.bannerHeaderHeight,
-            color: config.primaryColor,
+          child: DecoratedBox(
+            decoration: BoxDecoration(color: config.primaryColor),
+            child: const SizedBox(
+              width: double.infinity,
+              height: UILayout.bannerHeaderHeight,
+            ),
           ),
         ),
         // Background icon watermark
