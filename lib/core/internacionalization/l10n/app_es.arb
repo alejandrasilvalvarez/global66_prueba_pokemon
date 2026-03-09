@@ -1,0 +1,17 @@
+{
+  "begin":"Comenzar",
+  "error_retry": "Ocurrió un error, inténtalo de nuevo",
+  "error_retry_button": "Reintentar",
+  "error_loading_information": "No pudimos cargar la información en este momento. Verifica tu conexión o intenta nuevamente más tarde.",
+  "generic_error": "No pudimos completar la petición, intenta nuevamente",
+  "generic_error_title": "Algo salió mal",
+  "navbar_pokedex": "Pokédex",
+  "navbar_regions": "Regiones",
+  "navbar_favourites": "Favoritos",
+  "navbar_profile": "Perfil",
+  "onboarding_continue":"Continuar",
+  "onboarding_title_all_pokemons_in_the_same_place": "Todos los Pokémon en un solo lugar",
+  "onboarding_description_all_pokemon": "Accede a una amplia lista de Pokémon de todas las generaciones creadas por Nintendo",
+  "onboarding_title_keep_updated":"Mantén tu Pokédex actualizada",
+  "onboarding_description_profile": "Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación"
+}

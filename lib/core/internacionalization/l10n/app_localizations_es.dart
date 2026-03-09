@@ -1,0 +1,60 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Spanish Castilian (`es`).
+class AppLocalizationsEs extends AppLocalizations {
+  AppLocalizationsEs([String locale = 'es']) : super(locale);
+
+  @override
+  String get begin => 'Comenzar';
+
+  @override
+  String get error_retry => 'Ocurrió un error, inténtalo de nuevo';
+
+  @override
+  String get error_retry_button => 'Reintentar';
+
+  @override
+  String get error_loading_information =>
+      'No pudimos cargar la información en este momento. Verifica tu conexión o intenta nuevamente más tarde.';
+
+  @override
+  String get generic_error =>
+      'No pudimos completar la petición, intenta nuevamente';
+
+  @override
+  String get generic_error_title => 'Algo salió mal';
+
+  @override
+  String get navbar_pokedex => 'Pokédex';
+
+  @override
+  String get navbar_regions => 'Regiones';
+
+  @override
+  String get navbar_favourites => 'Favoritos';
+
+  @override
+  String get navbar_profile => 'Perfil';
+
+  @override
+  String get onboarding_continue => 'Continuar';
+
+  @override
+  String get onboarding_title_all_pokemons_in_the_same_place =>
+      'Todos los Pokémon en un solo lugar';
+
+  @override
+  String get onboarding_description_all_pokemon =>
+      'Accede a una amplia lista de Pokémon de todas las generaciones creadas por Nintendo';
+
+  @override
+  String get onboarding_title_keep_updated => 'Mantén tu Pokédex actualizada';
+
+  @override
+  String get onboarding_description_profile =>
+      'Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación';
+}

@@ -1,0 +1,76 @@
+name: global66_prueba_pokemon
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  build_runner: ^2.4.11
+  cupertino_icons: ^1.0.8
+  dartz: ^0.10.1
+  dio: ^5.7.0
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+
+  flutter_dotenv: ^6.0.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^3.2.1
+  flutter_svg: ^2.2.4
+  flutter_test:
+    sdk: flutter
+  go_router: ^17.1.0
+  html_unescape: ^2.0.0
+  internet_connection_checker: ^3.0.1
+  intl: 0.20.2
+  logger: ^2.4.0
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^6.0.0
+  flutter_native_splash: ^2.4.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    # Illustration Splash
+    - assets/illustration_splash/illustration_hilda.svg
+    - assets/illustration_splash/illustration_hilda.png
+    - assets/illustration_splash/illustration_trainer.svg
+    - assets/illustration_splash/illustration_trainer.png
+    - assets/illustration_splash/loader_splash.svg
+    - assets/illustration_splash/splash_loader.png
+
+    # Illustrations Elements
+    - assets/illustrations_elements/bug.svg
+    - assets/illustrations_elements/dark.svg
+    - assets/illustrations_elements/dragon.svg
+    - assets/illustrations_elements/electric.svg
+    - assets/illustrations_elements/fairy.svg
+    - assets/illustrations_elements/fighting.svg
+    - assets/illustrations_elements/fire.svg
+    - assets/illustrations_elements/flying.svg
+    - assets/illustrations_elements/ghost.svg
+    - assets/illustrations_elements/grass.svg
+    - assets/illustrations_elements/ground.svg
+    - assets/illustrations_elements/normal.svg
+    - assets/illustrations_elements/poison.svg
+    - assets/illustrations_elements/psychic.svg
+    - assets/illustrations_elements/rock.svg
+    - assets/illustrations_elements/steel.svg
+    - assets/illustrations_elements/water.svg
+
+    # Illustrations Errors
+    - assets/illustrations_errors/magikarp_error.png
+    - assets/illustrations_errors/jigglypuff_error.png
+
+  fonts:
+    - family: PokeIcons
+      fonts: 
+        - asset: assets/icons/PokeIcons.ttf
+

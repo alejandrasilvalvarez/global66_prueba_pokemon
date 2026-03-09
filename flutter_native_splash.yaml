@@ -1,0 +1,8 @@
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/illustration_splash/white_splash.png
+  branding: assets/illustration_splash/global66_logo.png
+  
+  android_12:
+    image: assets/illustration_splash/white_splash.png
+    color: "#ffffff"
