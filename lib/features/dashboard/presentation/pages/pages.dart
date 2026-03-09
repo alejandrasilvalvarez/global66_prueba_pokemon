@@ -7,6 +7,8 @@ import '../../../../core/internacionalization/l10n/app_localizations.dart';
 import '../../../../design_system/ui_constants/colors.dart';
 import '../../../../design_system/ui_constants/layout.dart';
 import '../../../../design_system/ui_constants/spacing.dart';
+import '../../domain/entities/pokemon.dart';
+import '../viewmodel/dashboard_viewmodel.dart';
 import '../widgets/widgets.dart';
 
 part './home.dart';
