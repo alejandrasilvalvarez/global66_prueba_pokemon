@@ -5,21 +5,26 @@ class PokemonCard extends ConsumerWidget {
     required this.id,
     required this.name,
     required this.imageUrl,
-    this.isFavorite = false,
     super.key,
   });
 
   final String id;
   final String name;
   final String imageUrl;
-  final bool isFavorite;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLocalizations localizations = AppLocalizations.of(context)!;
+    int pokemonId = int.parse(id);
 
     AsyncValue<PokemonDetail> detail = ref.watch(
-      pokemonDetailProvider(int.parse(id)),
+      pokemonDetailProvider(pokemonId),
+    );
+
+    bool isFavorite = ref.watch(
+      favouritesProvider.select(
+        (Set<int> favorites) => favorites.contains(pokemonId),
+      ),
     );
 
     return detail.when(
@@ -139,7 +144,14 @@ class PokemonCard extends ConsumerWidget {
                       Positioned(
                         top: UILayout.small,
                         right: UILayout.small,
-                        child: FavouriteButton(isFavorite: isFavorite),
+                        child: FavouriteButton(
+                          isFavorite: isFavorite,
+                          onTap: () {
+                            ref
+                                .read(favouritesProvider.notifier)
+                                .toggleFavorite(int.parse(id));
+                          },
+                        ),
                       ),
                     ],
                   ),

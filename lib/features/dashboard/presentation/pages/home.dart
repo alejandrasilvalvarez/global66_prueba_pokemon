@@ -88,7 +88,6 @@ class LoadedDataPokemonsList extends StatelessWidget {
                   id: pokemon.id.toString(),
                   name: pokemon.name,
                   imageUrl: pokemon.imageUrl,
-                  isFavorite: false,
                 ),
               ),
             ),
