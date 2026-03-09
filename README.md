@@ -268,6 +268,9 @@ test/Features/ # Tests organizados por feature
 
 ```
 
+Además se agregó un linter curado en el analysis_options.yaml para asegurar las mejores prácticas a la hora de escribir código
+Se agruparon los widgets y las views por librerías para la facilidad en importar dependencias y exportar funcionalidades.
+
 ### Flujo de Datos (Clean Architecture)
 
 ```
