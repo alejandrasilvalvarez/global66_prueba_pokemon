@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/internacionalization/l10n/app_localizations.dart';
 import '../../../../core/ui/pokemon_type_helper.dart';
+import '../../../../design_system/components/error_illustration_home.dart';
 import '../../../../design_system/components/favourite_button.dart';
 import '../../../../design_system/components/pokemon_card_shimmer.dart';
 import '../../../../design_system/components/pokemon_type_flag.dart';

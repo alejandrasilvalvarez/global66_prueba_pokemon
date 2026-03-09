@@ -12,6 +12,21 @@ class AppLocalizationsEs extends AppLocalizations {
   String get begin => 'Comenzar';
 
   @override
+  String get error_title_coming_soon => '¡Muy pronto disponible!';
+
+  @override
+  String get error_description_coming_soon =>
+      'Estamos trabajando para traerte esta sección. Vuelve más adelante para descubrir todas las novedades.';
+
+  @override
+  String get error_title_no_favourite =>
+      'No has marcado ningún Pokémon como favorito';
+
+  @override
+  String get error_description_no_favourites =>
+      'Haz clic en el ícono de corazón de tus Pokémon favoritos y aparecerán aquí.';
+
+  @override
   String get error_retry => 'Ocurrió un error, inténtalo de nuevo';
 
   @override

@@ -1,5 +1,9 @@
 {
   "begin":"Comenzar",
+  "error_title_coming_soon": "¡Muy pronto disponible!",
+  "error_description_coming_soon": "Estamos trabajando para traerte esta sección. Vuelve más adelante para descubrir todas las novedades.",
+  "error_title_no_favourite": "No has marcado ningún Pokémon como favorito",
+  "error_description_no_favourites": "Haz clic en el ícono de corazón de tus Pokémon favoritos y aparecerán aquí.",
   "error_retry": "Ocurrió un error, inténtalo de nuevo",
   "error_retry_button": "Reintentar",
   "error_loading_information": "No pudimos cargar la información en este momento. Verifica tu conexión o intenta nuevamente más tarde.",

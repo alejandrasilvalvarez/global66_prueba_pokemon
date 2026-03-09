@@ -104,6 +104,30 @@ abstract class AppLocalizations {
   /// **'Comenzar'**
   String get begin;
 
+  /// No description provided for @error_title_coming_soon.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Muy pronto disponible!'**
+  String get error_title_coming_soon;
+
+  /// No description provided for @error_description_coming_soon.
+  ///
+  /// In es, this message translates to:
+  /// **'Estamos trabajando para traerte esta sección. Vuelve más adelante para descubrir todas las novedades.'**
+  String get error_description_coming_soon;
+
+  /// No description provided for @error_title_no_favourite.
+  ///
+  /// In es, this message translates to:
+  /// **'No has marcado ningún Pokémon como favorito'**
+  String get error_title_no_favourite;
+
+  /// No description provided for @error_description_no_favourites.
+  ///
+  /// In es, this message translates to:
+  /// **'Haz clic en el ícono de corazón de tus Pokémon favoritos y aparecerán aquí.'**
+  String get error_description_no_favourites;
+
   /// No description provided for @error_retry.
   ///
   /// In es, this message translates to:

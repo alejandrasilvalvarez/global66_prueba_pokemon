@@ -12,6 +12,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get begin => 'Begin';
 
   @override
+  String get error_title_coming_soon => 'Coming soon!';
+
+  @override
+  String get error_description_coming_soon =>
+      'We\'re working to bring you this section. Check back later to discover all the new features.';
+
+  @override
+  String get error_title_no_favourite =>
+      'You haven\'t marked any Pokémon as favorites.';
+
+  @override
+  String get error_description_no_favourites =>
+      'Click on the heart icon of your favorite Pokémon and they will appear here.';
+
+  @override
   String get error_retry => 'An error occurred, please try again';
 
   @override
