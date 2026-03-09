@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import '../data/datasources/favourites_local_datasource.dart';
+import '../data/datasources/favourites_local_datasource_impl.dart';
 import '../data/repositories/favourites_repository_impl.dart';
 import '../domain/repositories/favourites_repository.dart';
 import '../domain/usecases/get_favourites_usecase.dart';
@@ -12,7 +13,8 @@ final Provider<FlutterSecureStorage> secureStorageProvider =
 
 final Provider<FavouritesLocalDatasource> favouritesDatasourceProvider =
     Provider<FavouritesLocalDatasource>(
-      (Ref ref) => FavouritesLocalDatasource(ref.read(secureStorageProvider)),
+      (Ref ref) =>
+          FavouritesLocalDatasourceImpl(ref.read(secureStorageProvider)),
     );
 
 final Provider<FavouritesRepository> favouritesRepositoryProvider =
