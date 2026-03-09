@@ -8,7 +8,7 @@
   "error_retry_button": "Reintentar",
   "error_loading_information": "No pudimos cargar la información en este momento. Verifica tu conexión o intenta nuevamente más tarde.",
   "generic_error": "No pudimos completar la petición, intenta nuevamente",
-  "generic_error_title": "Algo salió mal",
+  "generic_error_title": "Algo salió mal...",
   "navbar_pokedex": "Pokédex",
   "navbar_regions": "Regiones",
   "navbar_favourites": "Favoritos",

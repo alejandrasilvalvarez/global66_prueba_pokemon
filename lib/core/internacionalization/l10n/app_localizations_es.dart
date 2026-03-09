@@ -41,7 +41,7 @@ class AppLocalizationsEs extends AppLocalizations {
       'No pudimos completar la petición, intenta nuevamente';
 
   @override
-  String get generic_error_title => 'Algo salió mal';
+  String get generic_error_title => 'Algo salió mal...';
 
   @override
   String get navbar_pokedex => 'Pokédex';

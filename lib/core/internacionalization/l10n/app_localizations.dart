@@ -155,7 +155,7 @@ abstract class AppLocalizations {
   /// No description provided for @generic_error_title.
   ///
   /// In es, this message translates to:
-  /// **'Algo salió mal'**
+  /// **'Algo salió mal...'**
   String get generic_error_title;
 
   /// No description provided for @navbar_pokedex.

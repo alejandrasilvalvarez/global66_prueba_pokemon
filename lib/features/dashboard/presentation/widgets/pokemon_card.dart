@@ -40,51 +40,56 @@ class PokemonCard extends ConsumerWidget {
                 // LADO IZQUIERDO: Información
                 Expanded(
                   flex: 3,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: UILayout.medium,
-                      vertical: UILayout.mediumText,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          localizations.number(id),
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: UILayout.smallText,
-                            color: TextColors.textSecondary.color,
+                  child: GestureDetector(
+                    onTap: () {
+                      context.push('/pokemon/${pokemon.id}');
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: UILayout.medium,
+                        vertical: UILayout.mediumText,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            localizations.number(id),
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: UILayout.smallText,
+                              color: TextColors.textSecondary.color,
+                            ),
                           ),
-                        ),
-                        Text(
-                          pokemon.name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: UILayout.largeText,
-                            color: TextColors.textPrimary.color,
+                          Text(
+                            pokemon.name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: UILayout.largeText,
+                              color: TextColors.textPrimary.color,
+                            ),
                           ),
-                        ),
-                        Spacing.spacingV4,
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            ...pokemon.types.map(
-                              (String type) => Padding(
-                                padding: const EdgeInsets.only(
-                                  right: UILayout.small,
-                                ),
-                                child: PokemonTypeFlag(
-                                  iconPath: AssetsConstants.grass,
-                                  label: type,
-                                  typeColor: config.primaryColor,
+                          Spacing.spacingV4,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              ...pokemon.types.map(
+                                (String type) => Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: UILayout.small,
+                                  ),
+                                  child: PokemonTypeFlag(
+                                    iconPath: AssetsConstants.grass,
+                                    label: type,
+                                    typeColor: config.primaryColor,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

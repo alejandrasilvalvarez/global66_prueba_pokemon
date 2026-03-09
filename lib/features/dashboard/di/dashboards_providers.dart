@@ -1,10 +1,12 @@
+// ignore_for_file: always_specify_types
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod/src/providers/future_provider.dart';
 
 import '../data/datasources/dashboard_remote_datasource_impl.dart';
 import '../data/repositories/dashboard_repository_impl.dart';
+import '../domain/entities/pokedex_detail.dart';
 import '../domain/entities/pokemon_small_detail.dart';
+import '../domain/usecases/fetch_pokedex_detail_usecase.dart';
 import '../domain/usecases/fetch_pokemons_use_case.dart';
 
 final Provider<Dio> dioProvider = Provider<Dio>((Ref ref) => Dio());
@@ -25,8 +27,22 @@ final Provider<FetchPokemonsUseCase> fetchPokemonsUseCaseProvider =
       (Ref ref) => FetchPokemonsUseCase(ref.read(dashboardRepositoryProvider)),
     );
 
-final FutureProviderFamily<PokemonSmallDetail, int> pokemonDetailProvider =
-    FutureProvider.family<PokemonSmallDetail, int>((Ref ref, int id) async {
-      DashboardRepositoryImpl repo = ref.read(dashboardRepositoryProvider);
-      return repo.fetchPokemonDetail(id);
+final pokemonDetailProvider = FutureProvider.autoDispose
+    .family<PokemonSmallDetail, int>((Ref ref, int id) async {
+      DashboardRepositoryImpl repo = ref.watch(dashboardRepositoryProvider);
+      return repo.fetchPokemonSmallDetail(id);
     });
+
+final pokedexDetailProvider = FutureProvider.autoDispose
+    .family<PokedexDetail, int>((Ref ref, int id) async {
+      FetchPokedexDetailUseCase useCase = ref.watch(
+        fetchPokedexDetailUseCaseProvider,
+      );
+      return useCase(id);
+    });
+
+final Provider<FetchPokedexDetailUseCase> fetchPokedexDetailUseCaseProvider =
+    Provider<FetchPokedexDetailUseCase>(
+      (Ref ref) =>
+          FetchPokedexDetailUseCase(ref.watch(dashboardRepositoryProvider)),
+    );

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/dashboard/presentation/pages/pages.dart';
+import '../../features/dashboard/presentation/pages/pokedex_detail.dart';
 import '../../features/favourites/presentation/view/views.dart';
 import '../../features/main_wrapper/view/main_screen_wrapper.dart';
 import '../../features/onboarding/presentation/view/views.dart';
@@ -22,6 +23,13 @@ final Provider<GoRouter> routerProvider = Provider<GoRouter>(
         path: '/onboarding',
         builder: (BuildContext context, GoRouterState state) =>
             const OnboardingView(),
+      ),
+      GoRoute(
+        path: '/pokemon/:id',
+        builder: (BuildContext context, GoRouterState state) {
+          int id = int.parse(state.pathParameters['id']!);
+          return PokedexDetailView(id: id);
+        },
       ),
       StatefulShellRoute.indexedStack(
         builder:

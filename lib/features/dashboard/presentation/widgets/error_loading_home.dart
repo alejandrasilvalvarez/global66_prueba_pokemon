@@ -10,6 +10,7 @@ class ErrorLoadingHome extends StatelessWidget {
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: UILayout.medium),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ErrorIllustrationHome(
             title: localizations.generic_error_title,
