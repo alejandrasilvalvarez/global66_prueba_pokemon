@@ -1,6 +1,20 @@
 # 🔴 Pokédex - Global66 Prueba Técnica
 
-Aplicación móvil desarrollada en **Flutter** que consume la [PokéAPI](https://pokeapi.co/) para mostrar un listado de Pokémon, sus detalles, agregar favoritos y funcionalidades futuras :DD.
+Aplicación móvil desarrollada en **Flutter** que consume la [PokéAPI](https://pokeapi.co/) para mostrar un listado de Pokémon, sus detalles, agregar favoritos y funcionalidades futuras :DD. 
+
+* Detalle no menor a notar, se cambió el logo de la aplicación por una maleta pokemon jaja.
+
+<img width="115" height="112" alt="image" src="https://github.com/user-attachments/assets/5c457dec-ec37-4e95-aa1b-30016775ec99" />
+
+
+
+https://github.com/user-attachments/assets/8e2e9b91-3815-4bbf-bfb5-e2de56813bbc
+
+
+
+https://github.com/user-attachments/assets/09f81538-bad6-4fc1-a873-b898b1f2fa2a
+
+
 
 ---
 
