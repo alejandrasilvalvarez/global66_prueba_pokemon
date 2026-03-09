@@ -1,15 +1,9 @@
 part of com.global66.home.widgets;
 
 class PokemonCard extends ConsumerWidget {
-  const PokemonCard({
-    required this.id,
-    required this.name,
-    required this.imageUrl,
-    super.key,
-  });
+  const PokemonCard({required this.id, required this.imageUrl, super.key});
 
   final String id;
-  final String name;
   final String imageUrl;
 
   @override
@@ -64,7 +58,7 @@ class PokemonCard extends ConsumerWidget {
                           ),
                         ),
                         Text(
-                          name,
+                          pokemon.name,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: UILayout.largeText,

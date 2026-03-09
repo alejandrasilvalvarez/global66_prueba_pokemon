@@ -57,7 +57,6 @@ class FavouritesView extends ConsumerWidget {
                     padding: const EdgeInsets.only(bottom: UILayout.smallText),
                     child: PokemonCard(
                       id: id.toString(),
-                      name: 'Pokemon',
                       imageUrl:
                           'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png',
                     ),

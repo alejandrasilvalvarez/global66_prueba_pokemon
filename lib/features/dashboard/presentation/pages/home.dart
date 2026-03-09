@@ -86,7 +86,6 @@ class LoadedDataPokemonsList extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: UILayout.smallText),
                 child: PokemonCard(
                   id: pokemon.id.toString(),
-                  name: pokemon.name,
                   imageUrl: pokemon.imageUrl,
                 ),
               ),

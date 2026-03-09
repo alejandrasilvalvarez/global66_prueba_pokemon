@@ -7,6 +7,7 @@ part 'pokemon_detail_model.g.dart';
 abstract class PokemonDetailModel with _$PokemonDetailModel {
   const factory PokemonDetailModel({
     required int id,
+    required String name,
     required List<TypeSlotModel> types,
   }) = _PokemonDetailModel;
 

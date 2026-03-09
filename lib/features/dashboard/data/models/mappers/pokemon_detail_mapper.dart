@@ -5,5 +5,6 @@ extension PokemonDetailMapper on PokemonDetailModel {
   PokemonDetail toEntity() => PokemonDetail(
     id: id,
     types: types.map((TypeSlotModel e) => e.type.name).toList(),
+    name: name,
   );
 }
