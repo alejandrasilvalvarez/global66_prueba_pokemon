@@ -13,6 +13,10 @@ const BorderRadius radiust4 = BorderRadius.only(
   topLeft: Radius.circular(4),
   topRight: Radius.circular(4),
 );
+const BorderRadius radiust8 = BorderRadius.only(
+  topLeft: Radius.circular(8),
+  topRight: Radius.circular(8),
+);
 const BorderRadius radiusl4 = BorderRadius.only(
   topLeft: Radius.circular(4),
   bottomLeft: Radius.circular(4),

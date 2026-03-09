@@ -3,6 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/internacionalization/l10n/app_localizations.dart';
+import '../../../design_system/ui_constants/border_radius.dart';
+import '../../../design_system/ui_constants/colors.dart';
+import '../../../design_system/ui_constants/layout.dart';
 import '../../../design_system/ui_constants/poke_icons_icons.dart';
 import '../state/navigation_state.dart';
 import '../viewmodel/navigation_viewmodel.dart';
@@ -24,30 +27,82 @@ class MainScreen extends ConsumerWidget {
 
     return Scaffold(
       body: SafeArea(child: navigationShell),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: selectedIndex,
-        onDestinationSelected: (int index) {
-          ref.read(navigationViewModelProvider.notifier).onTabSelected(index);
-          navigationShell.goBranch(index);
-        },
-        destinations: <Widget>[
-          NavigationDestination(
-            icon: const Icon(PokeIcons.home),
-            label: localizations.navbar_pokedex,
+      bottomNavigationBar: DecoratedBox(
+        decoration: BoxDecoration(
+          color: TapBar.borderTop.color,
+          border: Border(
+            top: BorderSide(color: Colors.black.withValues(alpha: 0.1)),
           ),
-          NavigationDestination(
-            icon: const Icon(PokeIcons.globe_1),
-            label: localizations.navbar_regions,
+          borderRadius: radiust8,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 10,
+              offset: const Offset(0, -2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: radiust8,
+          child: BottomNavigationBar(
+            elevation: 0,
+            backgroundColor: Colors.white,
+            type: BottomNavigationBarType.fixed,
+            selectedItemColor: TapBar.iconActive.color,
+            unselectedItemColor: TapBar.iconDefault.color,
+            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
+            unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500),
+            currentIndex: selectedIndex,
+            onTap: (int index) {
+              ref
+                  .read(navigationViewModelProvider.notifier)
+                  .onTabSelected(index);
+              navigationShell.goBranch(index);
+            },
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: const Padding(
+                  padding: EdgeInsets.only(
+                    top: UILayout.medium,
+                    bottom: UILayout.small,
+                  ),
+                  child: Icon(PokeIcons.home),
+                ),
+                label: localizations.navbar_pokedex,
+              ),
+              BottomNavigationBarItem(
+                icon: const Padding(
+                  padding: EdgeInsets.only(
+                    top: UILayout.medium,
+                    bottom: UILayout.small,
+                  ),
+                  child: Icon(PokeIcons.globe_1),
+                ),
+                label: localizations.navbar_regions,
+              ),
+              BottomNavigationBarItem(
+                icon: const Padding(
+                  padding: EdgeInsets.only(
+                    top: UILayout.medium,
+                    bottom: UILayout.small,
+                  ),
+                  child: Icon(PokeIcons.favorite),
+                ),
+                label: localizations.navbar_favourites,
+              ),
+              BottomNavigationBarItem(
+                icon: const Padding(
+                  padding: EdgeInsets.only(
+                    top: UILayout.medium,
+                    bottom: UILayout.small,
+                  ),
+                  child: Icon(PokeIcons.user),
+                ),
+                label: localizations.navbar_profile,
+              ),
+            ],
           ),
-          NavigationDestination(
-            icon: const Icon(PokeIcons.favorite),
-            label: localizations.navbar_favourites,
-          ),
-          NavigationDestination(
-            icon: const Icon(PokeIcons.user),
-            label: localizations.navbar_profile,
-          ),
-        ],
+        ),
       ),
     );
   }

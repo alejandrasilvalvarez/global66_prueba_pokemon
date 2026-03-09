@@ -46,7 +46,14 @@ enum Azul {
   final Color color;
 }
 
+enum TapBar {
+  borderTop(Color.fromRGBO(224, 224, 224, 1)),
+  iconActive(Color.fromRGBO(21, 101, 192, 1)),
+  iconDefault(Color.fromRGBO(66, 66, 66, 1));
 
+  const TapBar(this.color);
+  final Color color;
+}
 
 enum ElementStatusColors {
   statusWaterPrimary(Color.fromRGBO(33, 150, 243, 1)),

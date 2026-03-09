@@ -6,6 +6,8 @@ class PrimaryButton extends StatelessWidget {
   final VoidCallback? onPressed;
 
   @override
-  Widget build(BuildContext context) =>
-      ElevatedButton(onPressed: onPressed, child: Text(label));
+  Widget build(BuildContext context) => SizedBox(
+    width: double.infinity,
+    child: ElevatedButton(onPressed: onPressed, child: Text(label)),
+  );
 }

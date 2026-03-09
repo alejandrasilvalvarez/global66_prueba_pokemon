@@ -52,7 +52,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Access a wide list of Pokémon from all generations created by Nintendo';
 
   @override
-  String get onboarding_title_keep_updated => 'Mantén tu Pokédex actualizada';
+  String get onboarding_title_keep_updated => 'Keep your Pokedex updated';
 
   @override
   String get onboarding_description_profile =>

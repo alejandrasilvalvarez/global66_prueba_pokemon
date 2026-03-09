@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart' hide Colors;
-import 'colors.dart'; 
+import 'colors.dart';
 
 class AppTheme {
   AppTheme._();
@@ -19,8 +19,10 @@ class AppTheme {
           backgroundColor: AppButtonState.buttonPrimary.color,
           foregroundColor: Colors.white,
           disabledBackgroundColor: AppButtonState.buttonPrimaryDisabled.color,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100),
+          ),
         ).copyWith(
           backgroundColor: WidgetStateProperty.resolveWith<Color?>((
             Set<WidgetState> states,
