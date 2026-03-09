@@ -27,13 +27,15 @@ Aplicación móvil desarrollada en **Flutter** que consume la [PokéAPI](https:/
 ### Prerrequisitos
 
 - **Flutter SDK** >= 3.11.1
+
   El proyecto lo decidí correr en esta versión de flutter pues, mi maquina es algo viejita y no me permitió hacer una actualización más reciente del framework por el sistema operativo que manejo actualmente.
 
 - **Dart SDK** (incluido con Flutter)
 
 - **Android Studio** / **Xcode** / **VSCode** (según la plataforma)
 
-- Un emulador o dispositivo físico conectado
+- Un emulador o dispositivo físico conectado.
+
   Recomeido mucho más correr la app en dispositivo fisico para poder apreciar con más detenimiento los detalles que se incluyeron en el proyecto. Pero, corre de igual manera en emulador Android y iOS.
 
 ### Pasos
