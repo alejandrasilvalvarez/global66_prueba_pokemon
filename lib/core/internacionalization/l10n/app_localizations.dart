@@ -187,6 +187,12 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación'**
   String get onboarding_description_profile;
+
+  /// No description provided for @search_pokemon_hint.
+  ///
+  /// In es, this message translates to:
+  /// **'Procurar Pókemon...'**
+  String get search_pokemon_hint;
 }
 
 class _AppLocalizationsDelegate

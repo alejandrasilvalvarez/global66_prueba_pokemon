@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide Colors;
-import 'colors.dart';
+import '../../design_system/ui_constants/colors.dart';
+import '../../design_system/ui_constants/layout.dart';
 
 class AppTheme {
   AppTheme._();
@@ -11,6 +12,7 @@ class AppTheme {
       seedColor: AppButtonState.buttonPrimary.color,
     ),
     elevatedButtonTheme: _buttonTheme,
+    inputDecorationTheme: _inputDecorationTheme,
   );
 
   static final ElevatedButtonThemeData _buttonTheme = ElevatedButtonThemeData(
@@ -40,4 +42,31 @@ class AppTheme {
           }),
         ),
   );
+
+  static final InputDecorationTheme _inputDecorationTheme =
+      InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: const EdgeInsets.symmetric(vertical: UILayout.small),
+        hintStyle: TextStyle(
+          color: TextColors.textDisabled.color,
+          fontSize: UILayout.mediumText,
+        ),
+        prefixIconColor: IconColors.disabled.color,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(UILayout.xxlarge),
+          borderSide: BorderSide(color: BorderColors.defaultColor.color),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(UILayout.xxlarge),
+          borderSide: BorderSide(color: BorderColors.defaultColor.color),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(UILayout.xxlarge),
+          borderSide: BorderSide(
+            color: BorderColors.defaultColor.color,
+            width: 1.5,
+          ),
+        ),
+      );
 }

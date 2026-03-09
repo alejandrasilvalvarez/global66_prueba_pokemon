@@ -32,7 +32,8 @@ enum ButtonTextColors {
 
 enum TextColors {
   textPrimary(Color.fromRGBO(18, 18, 18, 1)),
-  textSecondary(Color.fromRGBO(66, 66, 66, 1));
+  textSecondary(Color.fromRGBO(66, 66, 66, 1)),
+  textDisabled(Color.fromRGBO(158, 158, 158, 1));
 
   const TextColors(this.color);
   final Color color;
@@ -43,6 +44,20 @@ enum Azul {
   semilight(Color.fromRGBO(69, 101, 183, 1));
 
   const Azul(this.color);
+  final Color color;
+}
+
+enum IconColors {
+  disabled(Color.fromRGBO(158, 158, 158, 1));
+
+  const IconColors(this.color);
+  final Color color;
+}
+
+enum BorderColors {
+  defaultColor(Color.fromRGBO(224, 224, 224, 1));
+
+  const BorderColors(this.color);
   final Color color;
 }
 
@@ -99,36 +114,9 @@ enum ElementStatusColors {
 }
 
 class Colors {
-  static const Map<int, Color> salmonBrand = <int, Color>{
-    5: Color.fromRGBO(250, 240, 230, 1),
-    10: Color.fromRGBO(220, 190, 182, 1),
-    20: Color.fromRGBO(244, 181, 164, 1),
-    30: Color.fromRGBO(204, 120, 97, 1),
-  };
-
   static const Map<int, Color> escalaDeCinza = <int, Color>{
     800: Color.fromRGBO(51, 51, 51, 1),
     70: Color.fromRGBO(77, 77, 77, 1),
-  };
-  static const Map<int, Color> sunsetWarning = <int, Color>{
-    5: Color.fromRGBO(255, 239, 187, 1),
-    10: Color.fromRGBO(255, 220, 103, 1),
-    20: Color.fromRGBO(255, 207, 45, 1),
-    30: Color.fromRGBO(242, 177, 44, 1),
-    40: Color.fromRGBO(243, 150, 46, 1),
-    50: Color.fromRGBO(246, 139, 19, 1),
-    60: Color.fromRGBO(229, 123, 5, 1),
-    70: Color.fromRGBO(205, 108, 0, 1),
-  };
-
-  static const Map<int, Color> bitterSweetError = <int, Color>{
-    0: Color.fromRGBO(255, 221, 221, 1),
-    5: Color.fromRGBO(255, 182, 182, 1),
-    10: Color.fromRGBO(255, 108, 108, 1),
-    20: Color.fromRGBO(255, 70, 70, 1),
-    30: Color.fromRGBO(208, 29, 29, 1),
-    40: Color.fromRGBO(172, 13, 13, 1),
-    50: Color.fromRGBO(143, 8, 8, 1),
   };
 
   static const Map<int, Color> neutralGray = <int, Color>{

@@ -57,4 +57,7 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get onboarding_description_profile =>
       'Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación';
+
+  @override
+  String get search_pokemon_hint => 'Procurar Pókemon...';
 }

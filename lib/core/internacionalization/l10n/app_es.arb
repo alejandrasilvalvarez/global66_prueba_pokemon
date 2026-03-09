@@ -13,5 +13,6 @@
   "onboarding_title_all_pokemons_in_the_same_place": "Todos los Pokémon en un solo lugar",
   "onboarding_description_all_pokemon": "Accede a una amplia lista de Pokémon de todas las generaciones creadas por Nintendo",
   "onboarding_title_keep_updated":"Mantén tu Pokédex actualizada",
-  "onboarding_description_profile": "Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación"
+  "onboarding_description_profile": "Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación",
+  "search_pokemon_hint": "Procurar Pókemon..."
 }
