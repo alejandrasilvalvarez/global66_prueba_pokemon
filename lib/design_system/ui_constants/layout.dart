@@ -13,6 +13,8 @@ class UILayout {
   static const double xlarge = 48;
   static const double xxlarge = 96;
   static const double xxxlarge = 155;
+  static const double bannerHeaderHeight = 271;
+  static const double bannerTypeIconHeight = 204;
 
   static const double aspectRatio_16_9 = 16 / 9;
   static const double aspectRatio_3_2 = 3 / 2;

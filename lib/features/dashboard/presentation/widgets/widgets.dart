@@ -13,12 +13,15 @@ import '../../../../design_system/components/pokemon_card_shimmer.dart';
 import '../../../../design_system/components/pokemon_type_flag.dart';
 import '../../../../design_system/components/primary_button.dart';
 import '../../../../design_system/illustrations/assets_icons.dart';
+import '../../../../design_system/ui_constants/border_radius.dart';
 import '../../../../design_system/ui_constants/colors.dart';
 import '../../../../design_system/ui_constants/layout.dart';
 import '../../../../design_system/ui_constants/spacing.dart';
 import '../../di/dashboards_providers.dart';
+import '../../domain/entities/pokedex_detail.dart';
 import '../../domain/entities/pokemon_small_detail.dart';
 import '../viewmodel/favourites_viewmodel.dart';
 
 part 'error_loading_home.dart';
 part 'pokemon_card.dart';
+part 'pokedex_detail.dart';

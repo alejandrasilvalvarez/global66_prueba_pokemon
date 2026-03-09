@@ -25,7 +25,7 @@ class PokemonTypeFlag extends StatelessWidget {
     ),
     child: Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: UILayout.xsmall,
+        horizontal: UILayout.small,
         vertical: UILayout.xxsmall,
       ),
       child: Row(

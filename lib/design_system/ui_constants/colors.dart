@@ -135,6 +135,10 @@ class Colors {
     80: Color.fromRGBO(42, 42, 42, 1),
     90: Color.fromRGBO(18, 18, 18, 1),
   };
+  static const Color borderDefault = Color.fromRGBO(224, 224, 224, 1);
+  static const Color genderBlue = Color.fromRGBO(37, 81, 195, 1);
+  static const Color genderPink = Color.fromRGBO(255, 117, 150, 1);
+
   static const Color white = Color.fromRGBO(255, 255, 255, 1);
   static const Color black = Color.fromRGBO(0, 0, 0, 1);
   static const Color transparent = Color.fromRGBO(255, 255, 255, 0);
