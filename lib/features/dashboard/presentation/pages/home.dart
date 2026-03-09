@@ -78,19 +78,19 @@ class LoadedDataPokemonsList extends StatelessWidget {
       Spacing.spacingV16,
       //Pokemon List
       Expanded(
-        child: ListView(
+        child: ListView.builder(
           padding: const EdgeInsets.symmetric(vertical: UILayout.small),
-          children: <Widget>[
-            ...pokemons.map(
-              (Pokemon pokemon) => Padding(
-                padding: const EdgeInsets.only(bottom: UILayout.smallText),
-                child: PokemonCard(
-                  id: pokemon.id.toString(),
-                  imageUrl: pokemon.imageUrl,
-                ),
+          itemCount: pokemons.length,
+          itemBuilder: (BuildContext context, int index) {
+            Pokemon pokemon = pokemons[index];
+            return Padding(
+              padding: const EdgeInsets.only(bottom: UILayout.smallText),
+              child: PokemonCard(
+                id: pokemon.id.toString(),
+                imageUrl: pokemon.imageUrl,
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     ],

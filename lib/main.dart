@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'core/environment/environment.dart';
 import 'core/internacionalization/l10n/app_localizations.dart';
 import 'core/internacionalization/locale_provider.dart';
 import 'core/routes/routes.dart';
@@ -15,7 +16,7 @@ void main() async {
       WidgetsFlutterBinding.ensureInitialized();
 
       try {
-        await dotenv.load(fileName: '.env');
+        await dotenv.load(fileName: Environment.properties);
       } catch (_) {}
 
       runApp(const ProviderScope(child: MyApp()));

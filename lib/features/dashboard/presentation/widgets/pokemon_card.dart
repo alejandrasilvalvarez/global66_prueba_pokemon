@@ -140,6 +140,9 @@ class PokemonCard extends ConsumerWidget {
                           imageUrl,
                           height: UILayout.xxlarge,
                           fit: BoxFit.contain,
+                          cacheHeight: 200,
+                          cacheWidth: 200,
+                          errorBuilder: (_, __, ___) => const SizedBox.shrink(),
                         ),
                       ),
 
