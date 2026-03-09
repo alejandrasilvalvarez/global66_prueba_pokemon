@@ -31,12 +31,10 @@ void main() {
     });
 
     test('nextPage calls onFinish when on the last page', () {
-      OnboardingViewModel viewModel = container.read(
-        onboardingViewModelProvider.notifier,
-      );
-
-      // We manually update state to simulate being on the last page
-      viewModel.onPageChanged(2);
+      OnboardingViewModel viewModel =
+          container.read(onboardingViewModelProvider.notifier)
+            // We manually update state to simulate being on the last page
+            ..onPageChanged(2);
 
       bool finishCalled = false;
       viewModel.nextPage(3, () {

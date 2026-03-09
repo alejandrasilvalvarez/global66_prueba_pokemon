@@ -21,10 +21,7 @@ void main() {
     });
 
     test('onTabSelected updates selectedIndex', () {
-      NavigationViewModel viewModel = container.read(
-        navigationViewModelProvider.notifier,
-      );
-      viewModel.onTabSelected(1);
+      container.read(navigationViewModelProvider.notifier).onTabSelected(1);
       NavigationState state = container.read(navigationViewModelProvider);
       expect(state.selectedIndex, 1);
     });

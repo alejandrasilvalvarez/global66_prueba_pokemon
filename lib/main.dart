@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/src/router.dart';
+import 'package:go_router/go_router.dart';
 
 import 'core/internacionalization/l10n/app_localizations.dart';
 import 'core/internacionalization/locale_provider.dart';
