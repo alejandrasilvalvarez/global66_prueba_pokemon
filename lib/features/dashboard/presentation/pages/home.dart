@@ -23,6 +23,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
         child: LoadedDataPokemonsList(
           searchController: searchController,
           localizations: localizations,
+          pokemons: pokemons,
         ),
       ),
       error: (Object error, StackTrace stack) =>
@@ -36,9 +37,11 @@ class LoadedDataPokemonsList extends StatelessWidget {
   const LoadedDataPokemonsList({
     required this.searchController,
     required this.localizations,
+    required this.pokemons,
     super.key,
   });
 
+  final List<Pokemon> pokemons;
   final TextEditingController searchController;
   final AppLocalizations localizations;
 
@@ -79,22 +82,17 @@ class LoadedDataPokemonsList extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: UILayout.small),
           children: <Widget>[
-            PokemonCard(
-              id: '001',
-              name: 'Bulbasaur',
-              imageUrl:
-                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-              isFavorite: false,
-              types: <String>['Pasto', 'Veneno'],
-            ),
-            Spacing.spacingV16,
-            PokemonCard(
-              id: '002',
-              name: 'Ivysaur',
-              imageUrl:
-                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png',
-              isFavorite: true,
-              types: <String>['Pasto'],
+            ...pokemons.map(
+              (Pokemon pokemon) => Padding(
+                padding: const EdgeInsets.only(bottom: UILayout.smallText),
+                child: PokemonCard(
+                  id: pokemon.id.toString(),
+                  name: pokemon.name,
+                  imageUrl: pokemon.imageUrl,
+                  isFavorite: false,
+                  types: <String>['Pasto', 'Veneno'],
+                ),
+              ),
             ),
           ],
         ),
