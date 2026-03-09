@@ -41,6 +41,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get navbar_profile => 'Perfil';
 
   @override
+  String number(Object number) {
+    return 'Nº$number';
+  }
+
+  @override
   String get onboarding_continue => 'Continuar';
 
   @override

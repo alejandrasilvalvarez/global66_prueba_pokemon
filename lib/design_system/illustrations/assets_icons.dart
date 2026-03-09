@@ -16,6 +16,7 @@ class AssetsConstants {
   static const String ghost = '$_elementsPath/ghost.svg';
   static const String grass = '$_elementsPath/grass.svg';
   static const String ground = '$_elementsPath/ground.svg';
+  static const String ice = '$_elementsPath/ice.svg';
   static const String normal = '$_elementsPath/normal.svg';
   static const String poison = '$_elementsPath/poison.svg';
   static const String psychic = '$_elementsPath/psychic.svg';
@@ -30,10 +31,10 @@ class AssetsConstants {
   static const String loaderSplash = '$_splashPath/loader_splash.svg';
 
   // --- Illustration errors ---
-  static const String illustrationMagikarpError = '$_errorsPath/magikarp_error.png';
-  static const String illustrationJigglypuffError = '$_errorsPath/jigglypuff_error.png';
-
-
+  static const String illustrationMagikarpError =
+      '$_errorsPath/magikarp_error.png';
+  static const String illustrationJigglypuffError =
+      '$_errorsPath/jigglypuff_error.png';
 
   /// Devuelve la ruta del asset SVG basado en el tipo de Pokémon.
   static String getIconByType(String type) {

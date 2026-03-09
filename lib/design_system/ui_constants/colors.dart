@@ -116,7 +116,11 @@ enum ElementStatusColors {
 class Colors {
   static const Map<int, Color> escalaDeCinza = <int, Color>{
     800: Color.fromRGBO(51, 51, 51, 1),
-    70: Color.fromRGBO(77, 77, 77, 1),
+    700: Color.fromRGBO(77, 77, 77, 1),
+  };
+
+  static const Map<int, Color> bronze = <int, Color>{
+    500: Color.fromRGBO(229, 57, 53, 1),
   };
 
   static const Map<int, Color> neutralGray = <int, Color>{

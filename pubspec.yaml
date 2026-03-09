@@ -1,6 +1,6 @@
 name: global66_prueba_pokemon
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -58,6 +58,7 @@ flutter:
     - assets/illustrations_elements/ghost.svg
     - assets/illustrations_elements/grass.svg
     - assets/illustrations_elements/ground.svg
+    - assets/illustrations_elements/ice.svg
     - assets/illustrations_elements/normal.svg
     - assets/illustrations_elements/poison.svg
     - assets/illustrations_elements/psychic.svg
@@ -71,6 +72,5 @@ flutter:
 
   fonts:
     - family: PokeIcons
-      fonts: 
+      fonts:
         - asset: assets/icons/PokeIcons.ttf
-

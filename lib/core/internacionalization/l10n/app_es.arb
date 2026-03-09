@@ -9,6 +9,7 @@
   "navbar_regions": "Regiones",
   "navbar_favourites": "Favoritos",
   "navbar_profile": "Perfil",
+  "number": "Nº{number}",
   "onboarding_continue":"Continuar",
   "onboarding_title_all_pokemons_in_the_same_place": "Todos los Pokémon en un solo lugar",
   "onboarding_description_all_pokemon": "Accede a una amplia lista de Pokémon de todas las generaciones creadas por Nintendo",

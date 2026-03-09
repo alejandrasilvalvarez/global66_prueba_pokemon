@@ -49,6 +49,31 @@ class _HomeViewState extends ConsumerState<HomeView> {
             ],
           ),
           Spacing.spacingV16,
+          //Pokemon List
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(vertical: UILayout.small),
+              children: <Widget>[
+                PokemonCard(
+                  id: '001',
+                  name: 'Bulbasaur',
+                  imageUrl:
+                      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+                  isFavorite: false,
+                  types: ['Pasto', 'Veneno'],
+                ),
+                Spacing.spacingV16,
+                PokemonCard(
+                  id: '002',
+                  name: 'Ivysaur',
+                  imageUrl:
+                      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png',
+                  isFavorite: true,
+                  types: ['Pasto'],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

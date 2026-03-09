@@ -158,6 +158,12 @@ abstract class AppLocalizations {
   /// **'Perfil'**
   String get navbar_profile;
 
+  /// No description provided for @number.
+  ///
+  /// In es, this message translates to:
+  /// **'Nº{number}'**
+  String number(Object number);
+
   /// No description provided for @onboarding_continue.
   ///
   /// In es, this message translates to:
