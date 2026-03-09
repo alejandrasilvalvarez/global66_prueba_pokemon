@@ -1,4 +1,4 @@
-library com.global66.favourites.views;
+library com.global66.favourites.pages;
 
 import 'package:flutter/material.dart' hide Colors;
 import 'package:flutter_riverpod/flutter_riverpod.dart';

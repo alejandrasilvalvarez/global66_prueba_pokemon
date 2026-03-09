@@ -1,4 +1,4 @@
-part of com.global66.onboarding.views;
+part of com.global66.onboarding.pages;
 
 class OnboardingView extends ConsumerWidget {
   const OnboardingView({super.key});

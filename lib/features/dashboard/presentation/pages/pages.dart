@@ -8,9 +8,12 @@ import '../../../../design_system/components/poke_bola_loader.dart';
 import '../../../../design_system/ui_constants/colors.dart';
 import '../../../../design_system/ui_constants/layout.dart';
 import '../../../../design_system/ui_constants/spacing.dart';
+import '../../di/dashboards_providers.dart';
+import '../../domain/entities/pokedex_detail.dart';
 import '../../domain/entities/pokemon.dart';
 import '../state/dashboard_state.dart';
 import '../viewmodel/dashboard_viewmodel.dart';
 import '../widgets/widgets.dart';
 
 part './home.dart';
+part './pokedex_detail.dart';

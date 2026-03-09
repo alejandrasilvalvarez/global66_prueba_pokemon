@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../core/internacionalization/l10n/app_localizations.dart';
-import '../../../../design_system/components/poke_bola_loader.dart';
-import '../../di/dashboards_providers.dart';
-import '../../domain/entities/pokedex_detail.dart';
-import '../widgets/widgets.dart';
+part of com.global66.home.pages;
 
 class PokedexDetailView extends ConsumerWidget {
   const PokedexDetailView({required this.id, super.key});

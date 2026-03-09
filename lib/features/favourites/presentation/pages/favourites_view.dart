@@ -1,4 +1,4 @@
-part of com.global66.favourites.views;
+part of com.global66.favourites.pages;
 
 class FavouritesView extends ConsumerWidget {
   const FavouritesView({super.key});

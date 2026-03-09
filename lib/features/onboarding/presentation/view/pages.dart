@@ -1,4 +1,4 @@
-library com.global66.onboarding.views;
+library com.global66.onboarding.pages;
 
 import 'package:flutter/material.dart' hide Colors;
 import 'package:flutter_riverpod/flutter_riverpod.dart';

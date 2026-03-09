@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart' hide Colors;
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../core/internacionalization/l10n/app_localizations.dart';
-import '../../../../design_system/components/error_illustration_home.dart';
-import '../../../../design_system/illustrations/assets_icons.dart';
+part of com.global66.regions.pages;
 
 class RegionsView extends ConsumerWidget {
   const RegionsView({super.key});
