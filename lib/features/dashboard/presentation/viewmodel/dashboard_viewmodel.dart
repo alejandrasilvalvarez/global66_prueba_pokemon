@@ -1,17 +1,32 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../di/dashboards_providers.dart';
 import '../../domain/entities/pokemon.dart';
-import 'dashboard_providers.dart';
+import '../../domain/usecases/fetch_pokemons_use_case.dart';
+import '../state/dashboard_state.dart';
 
-final dashboardViewModelProvider =
-    AsyncNotifierProvider<DashboardViewModel, List<Pokemon>>(
+final NotifierProvider<DashboardViewModel, DashboardState>
+dashboardViewModelProvider =
+    NotifierProvider<DashboardViewModel, DashboardState>(
       DashboardViewModel.new,
     );
 
-class DashboardViewModel extends AsyncNotifier<List<Pokemon>> {
+class DashboardViewModel extends Notifier<DashboardState> {
   @override
-  Future<List<Pokemon>> build() async {
-    final usecase = ref.read(fetchPokemonsUseCaseProvider);
-    return usecase();
+  DashboardState build() {
+    loadPokemons();
+    return const DashboardState.loading();
+  }
+
+  Future<void> loadPokemons() async {
+    try {
+      FetchPokemonsUseCase usecase = ref.read(fetchPokemonsUseCaseProvider);
+
+      List<Pokemon> pokemons = await usecase();
+
+      state = DashboardState.data(pokemons);
+    } catch (e) {
+      state = DashboardState.error(e.toString());
+    }
   }
 }

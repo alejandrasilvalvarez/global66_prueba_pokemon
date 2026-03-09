@@ -9,6 +9,7 @@ import '../../../../design_system/ui_constants/colors.dart';
 import '../../../../design_system/ui_constants/layout.dart';
 import '../../../../design_system/ui_constants/spacing.dart';
 import '../../domain/entities/pokemon.dart';
+import '../state/dashboard_state.dart';
 import '../viewmodel/dashboard_viewmodel.dart';
 import '../widgets/widgets.dart';
 

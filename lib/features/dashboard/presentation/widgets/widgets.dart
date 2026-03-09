@@ -14,8 +14,8 @@ import '../../../../design_system/illustrations/assets_icons.dart';
 import '../../../../design_system/ui_constants/colors.dart';
 import '../../../../design_system/ui_constants/layout.dart';
 import '../../../../design_system/ui_constants/spacing.dart';
+import '../../di/dashboards_providers.dart';
 import '../../domain/entities/pokemon_detail.dart';
-import '../viewmodel/dashboard_providers.dart';
 
 part 'error_loading_home.dart';
 part 'pokemon_card.dart';

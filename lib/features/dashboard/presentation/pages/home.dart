@@ -15,9 +15,11 @@ class _HomeViewState extends ConsumerState<HomeView> {
   @override
   Widget build(BuildContext context) {
     AppLocalizations localizations = AppLocalizations.of(context)!;
-    AsyncValue<List<Pokemon>> state = ref.watch(dashboardViewModelProvider);
+    DashboardState state = ref.watch(dashboardViewModelProvider);
 
     return state.when(
+      loading: () => const Center(child: PokeBolaLoader()),
+      error: (String message) => ErrorLoadingHome(localizations: localizations),
       data: (List<Pokemon> pokemons) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: UILayout.medium),
         child: LoadedDataPokemonsList(
@@ -26,9 +28,6 @@ class _HomeViewState extends ConsumerState<HomeView> {
           pokemons: pokemons,
         ),
       ),
-      error: (Object error, StackTrace stack) =>
-          ErrorLoadingHome(localizations: localizations),
-      loading: () => const Center(child: PokeBolaLoader()),
     );
   }
 }
