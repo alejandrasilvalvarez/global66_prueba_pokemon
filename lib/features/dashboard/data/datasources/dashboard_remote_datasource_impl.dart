@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../models/pokemon_detail_model.dart';
+import '../models/pokemon_small_detail_model.dart';
 import '../models/pokemon_list_response.dart';
 import 'dashboard_remote_datasource.dart';
 

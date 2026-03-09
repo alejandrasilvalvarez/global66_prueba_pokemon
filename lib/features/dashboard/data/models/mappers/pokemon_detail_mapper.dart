@@ -1,5 +1,5 @@
-import '../../../domain/entities/pokemon_detail.dart';
-import '../pokemon_detail_model.dart';
+import '../../../domain/entities/pokemon_small_detail.dart';
+import '../pokemon_small_detail_model.dart';
 
 extension PokemonDetailMapper on PokemonSmallDetailModel {
   PokemonSmallDetail toEntity() => PokemonSmallDetail(

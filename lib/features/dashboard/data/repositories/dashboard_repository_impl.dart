@@ -1,10 +1,10 @@
 import '../../domain/entities/pokemon.dart';
-import '../../domain/entities/pokemon_detail.dart';
+import '../../domain/entities/pokemon_small_detail.dart';
 import '../../domain/repositories/dashboard_repository.dart';
 import '../datasources/dashboard_remote_datasource.dart';
 import '../models/mappers/pokemon_detail_mapper.dart';
 import '../models/mappers/pokemon_mapper.dart';
-import '../models/pokemon_detail_model.dart';
+import '../models/pokemon_small_detail_model.dart';
 import '../models/pokemon_list_response.dart';
 import '../models/pokemon_model.dart';
 

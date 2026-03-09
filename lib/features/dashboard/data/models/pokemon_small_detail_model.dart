@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'pokemon_detail_model.freezed.dart';
-part 'pokemon_detail_model.g.dart';
+part 'pokemon_small_detail_model.freezed.dart';
+part 'pokemon_small_detail_model.g.dart';
 
 @freezed
 abstract class PokemonSmallDetailModel with _$PokemonSmallDetailModel {

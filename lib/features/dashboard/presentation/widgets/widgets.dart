@@ -16,7 +16,7 @@ import '../../../../design_system/ui_constants/colors.dart';
 import '../../../../design_system/ui_constants/layout.dart';
 import '../../../../design_system/ui_constants/spacing.dart';
 import '../../di/dashboards_providers.dart';
-import '../../domain/entities/pokemon_detail.dart';
+import '../../domain/entities/pokemon_small_detail.dart';
 import '../viewmodel/favourites_viewmodel.dart';
 
 part 'error_loading_home.dart';

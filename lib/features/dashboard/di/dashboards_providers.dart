@@ -4,7 +4,7 @@ import 'package:riverpod/src/providers/future_provider.dart';
 
 import '../data/datasources/dashboard_remote_datasource_impl.dart';
 import '../data/repositories/dashboard_repository_impl.dart';
-import '../domain/entities/pokemon_detail.dart';
+import '../domain/entities/pokemon_small_detail.dart';
 import '../domain/usecases/fetch_pokemons_use_case.dart';
 
 final Provider<Dio> dioProvider = Provider<Dio>((Ref ref) => Dio());
