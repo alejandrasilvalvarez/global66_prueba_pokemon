@@ -90,7 +90,6 @@ class LoadedDataPokemonsList extends StatelessWidget {
                   name: pokemon.name,
                   imageUrl: pokemon.imageUrl,
                   isFavorite: false,
-                  types: <String>['Pasto', 'Veneno'],
                 ),
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+import '../models/pokemon_detail_model.dart';
 import '../models/pokemon_list_response.dart';
 import 'dashboard_remote_datasource.dart';
 
@@ -14,5 +15,14 @@ class DashboardRemoteDatasourceImpl implements DashboardRemoteDatasource {
     );
 
     return PokemonListResponse.fromJson(response.data);
+  }
+
+  @override
+  Future<PokemonDetailModel> fetchPokemonDetail(int id) async {
+    Response<dynamic> response = await dio.get(
+      'https://pokeapi.co/api/v2/pokemon/$id',
+    );
+
+    return PokemonDetailModel.fromJson(response.data);
   }
 }
