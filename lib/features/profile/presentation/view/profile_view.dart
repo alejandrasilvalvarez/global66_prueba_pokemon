@@ -5,6 +5,6 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [Text('regions')]);
+    return Column(children: [Text('Perfil')]);
   }
 }
