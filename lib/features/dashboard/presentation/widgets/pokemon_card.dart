@@ -138,7 +138,7 @@ class PokemonCard extends ConsumerWidget {
                       Center(
                         child: Image.network(
                           imageUrl,
-                          height: UILayout.xlarge,
+                          height: UILayout.xxlarge,
                           fit: BoxFit.contain,
                         ),
                       ),
