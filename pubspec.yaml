@@ -76,6 +76,7 @@ flutter:
     # Illustrations Errors
     - assets/illustrations_errors/magikarp_error.png
     - assets/illustrations_errors/jigglypuff_error.png
+    - assets/illustrations_errors/profile_empty_state.png
 
   fonts:
     - family: PokeIcons

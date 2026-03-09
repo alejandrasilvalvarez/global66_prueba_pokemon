@@ -35,6 +35,8 @@ class AssetsConstants {
       '$_errorsPath/magikarp_error.png';
   static const String illustrationJigglypuffError =
       '$_errorsPath/jigglypuff_error.png';
+  static const String profileEmptyState =
+      '$_errorsPath/profile_empty_state.png';
 
   /// Devuelve la ruta del asset SVG basado en el tipo de Pokémon.
   static String getIconByType(String type) {
