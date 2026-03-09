@@ -1,6 +1,6 @@
 part of com.global66.home.widgets;
 
-class PokedexDetailBody extends StatelessWidget {
+class PokedexDetailBody extends ConsumerWidget {
   const PokedexDetailBody({required this.pokemon, super.key});
 
   final PokedexDetail pokemon;
@@ -9,117 +9,121 @@ class PokedexDetailBody extends StatelessWidget {
       s.isEmpty ? s : s[0].toUpperCase() + s.substring(1).toLowerCase();
 
   @override
-  Widget build(BuildContext context) => SingleChildScrollView(
-    child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: UILayout.medium),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(_capitalize(pokemon.name), style: context.title),
-          Spacing.spacingV4,
-          Text(
-            'N°${pokemon.id.toString().padLeft(3, '0')}',
-            style: TextStyle(
-              fontSize: UILayout.medium,
-              color: TextColors.textSecondary.color,
-              fontWeight: FontWeight.w600,
+  Widget build(BuildContext context, WidgetRef ref) {
+    AppLocalizations localizations = AppLocalizations.of(context)!;
+
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: UILayout.medium),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(_capitalize(pokemon.name), style: context.title),
+            Spacing.spacingV4,
+            Text(
+              localizations.number(pokemon.id.toString().padLeft(3, '0')),
+              style: TextStyle(
+                fontSize: UILayout.medium,
+                color: TextColors.textSecondary.color,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-          Spacing.spacingV24,
+            Spacing.spacingV24,
 
-          // Types Wrapper
-          Row(
-            spacing: 8,
-            children: pokemon.types.map((String type) {
-              PokemonTypeConfig tConfig = PokemonTypeHelper.getConfig(type);
-              return PokemonTypeFlag(
-                iconPath: tConfig.iconPath,
-                label: _capitalize(type),
-                typeColor: tConfig.primaryColor,
-              );
-            }).toList(),
-          ),
-          Spacing.spacingV24,
-
-          // Description
-          Text(
-            pokemon.description,
-            style: TextStyle(
-              fontSize: UILayout.mediumText,
-              color: TextColors.textSecondary.color,
+            // Types Wrapper
+            Row(
+              spacing: UILayout.small,
+              children: pokemon.types.map((String type) {
+                PokemonTypeConfig tConfig = PokemonTypeHelper.getConfig(type);
+                return PokemonTypeFlag(
+                  iconPath: tConfig.iconPath,
+                  label: _capitalize(type),
+                  typeColor: tConfig.primaryColor,
+                );
+              }).toList(),
             ),
-          ),
-          Spacing.spacingV24,
-          const Divider(height: 1, color: Colors.borderDefault, thickness: 1),
-          Spacing.spacingV24,
+            Spacing.spacingV24,
 
-          // Grid of stats
-          Row(
-            children: <Widget>[
-              _PokemonStatCard(
-                icon: Icons.shopping_bag_outlined,
-                label: 'PESO',
-                value: '${pokemon.weight} kg',
+            // Description
+            Text(
+              pokemon.description,
+              style: TextStyle(
+                fontSize: UILayout.mediumText,
+                color: TextColors.textSecondary.color,
               ),
-              const SizedBox(width: 16),
-              _PokemonStatCard(
-                icon: Icons.height,
-                label: 'ALTURA',
-                value: '${pokemon.height} m',
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Row(
-            children: <Widget>[
-              _PokemonStatCard(
-                icon: Icons.grid_view_outlined,
-                label: 'CATEGORÍA',
-                value: _capitalize(pokemon.category),
-              ),
-              const SizedBox(width: 16),
-              _PokemonStatCard(
-                icon: Icons.catching_pokemon,
-                label: 'HABILIDAD',
-                value: _capitalize(pokemon.ability),
-              ),
-            ],
-          ),
-          Spacing.spacingV32,
-
-          // Genero
-          _GenderRatio(
-            maleRatio: pokemon.malePercentage,
-            femaleRatio: pokemon.femalePercentage,
-          ),
-          Spacing.spacingV32,
-
-          // Debilidades
-          Text(
-            'Debilidades',
-            style: TextStyle(
-              fontSize: UILayout.largeText,
-              fontWeight: FontWeight.bold,
-              color: TextColors.textPrimary.color,
             ),
-          ),
-          Spacing.spacingV16,
-          Row(
-            spacing: 8,
-            children: pokemon.weaknesses.map((String type) {
-              PokemonTypeConfig tConfig = PokemonTypeHelper.getConfig(type);
-              return PokemonTypeFlag(
-                iconPath: tConfig.iconPath,
-                label: _capitalize(type),
-                typeColor: tConfig.primaryColor,
-              );
-            }).toList(),
-          ),
-          const SizedBox(height: UILayout.xxlarge),
-        ],
+            Spacing.spacingV24,
+            const Divider(height: 1, color: Colors.borderDefault, thickness: 1),
+            Spacing.spacingV24,
+
+            // Grid of stats
+            Row(
+              children: <Widget>[
+                _PokemonStatCard(
+                  icon: Icons.shopping_bag_outlined,
+                  label: localizations.pokedex_detail_weight,
+                  value: '${pokemon.weight} kg',
+                ),
+                const SizedBox(width: 16),
+                _PokemonStatCard(
+                  icon: Icons.height,
+                  label: localizations.pokedex_detail_height,
+                  value: '${pokemon.height} m',
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: <Widget>[
+                _PokemonStatCard(
+                  icon: Icons.grid_view_outlined,
+                  label: localizations.pokedex_detail_category,
+                  value: _capitalize(pokemon.category),
+                ),
+                const SizedBox(width: 16),
+                _PokemonStatCard(
+                  icon: Icons.catching_pokemon,
+                  label: localizations.pokedex_detail_ability,
+                  value: _capitalize(pokemon.ability),
+                ),
+              ],
+            ),
+            Spacing.spacingV32,
+
+            // Genero
+            _GenderRatio(
+              maleRatio: pokemon.malePercentage,
+              femaleRatio: pokemon.femalePercentage,
+            ),
+            Spacing.spacingV32,
+
+            // Debilidades
+            Text(
+              localizations.pokedex_detail_weaknesses,
+              style: TextStyle(
+                fontSize: UILayout.largeText,
+                fontWeight: FontWeight.bold,
+                color: TextColors.textPrimary.color,
+              ),
+            ),
+            Spacing.spacingV16,
+            Row(
+              spacing: UILayout.small,
+              children: pokemon.weaknesses.map((String type) {
+                PokemonTypeConfig tConfig = PokemonTypeHelper.getConfig(type);
+                return PokemonTypeFlag(
+                  iconPath: tConfig.iconPath,
+                  label: _capitalize(type),
+                  typeColor: tConfig.primaryColor,
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: UILayout.xxlarge),
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class _PokemonStatCard extends StatelessWidget {
@@ -169,8 +173,10 @@ class _PokemonStatCard extends StatelessWidget {
             width: double.infinity,
 
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-
+              padding: const EdgeInsets.symmetric(
+                vertical: UILayout.smallText,
+                horizontal: UILayout.small,
+              ),
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -190,20 +196,21 @@ class _PokemonStatCard extends StatelessWidget {
   );
 }
 
-class _GenderRatio extends StatelessWidget {
+class _GenderRatio extends ConsumerWidget {
   const _GenderRatio({required this.maleRatio, required this.femaleRatio});
 
   final double maleRatio;
   final double femaleRatio;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    AppLocalizations localizations = AppLocalizations.of(context)!;
     if (maleRatio == 0 && femaleRatio == 0) {
       return Center(
         child: Column(
           children: <Widget>[
             Text(
-              'GÉNERO',
+              localizations.pokedex_detail_gender,
               style: TextStyle(
                 fontSize: UILayout.smallText,
                 fontWeight: FontWeight.bold,
@@ -213,7 +220,7 @@ class _GenderRatio extends StatelessWidget {
             ),
             Spacing.spacingV8,
             Text(
-              'Desconocido',
+              localizations.pokedex_detail_unknown,
               style: TextStyle(
                 fontSize: UILayout.medium,
                 color: TextColors.textPrimary.color,
@@ -227,7 +234,7 @@ class _GenderRatio extends StatelessWidget {
     return Column(
       children: <Widget>[
         Text(
-          'GENERO',
+          localizations.pokedex_detail_gender,
           style: TextStyle(
             fontSize: UILayout.smallText,
             fontWeight: FontWeight.bold,

@@ -79,5 +79,32 @@ class AppLocalizationsEs extends AppLocalizations {
       'Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación';
 
   @override
+  String get pokedex_detail_gender => 'GÉNERO';
+
+  @override
+  String get pokedex_detail_weight => 'PESO';
+
+  @override
+  String get pokedex_detail_height => 'ALTURA';
+
+  @override
+  String get pokedex_detail_category => 'CATEGORÍA';
+
+  @override
+  String get pokedex_detail_ability => 'HABILIDAD';
+
+  @override
+  String get pokedex_detail_male => 'MASCULINO';
+
+  @override
+  String get pokedex_detail_female => 'FEMENINO';
+
+  @override
+  String get pokedex_detail_weaknesses => 'Debilidades';
+
+  @override
+  String get pokedex_detail_unknown => 'Desconocido';
+
+  @override
   String get search_pokemon_hint => 'Procurar Pókemon...';
 }

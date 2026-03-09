@@ -79,5 +79,32 @@ class AppLocalizationsEn extends AppLocalizations {
       'Register and save your profile, favorite Pokémon, settings, and much more in the app.';
 
   @override
+  String get pokedex_detail_gender => 'GENDER';
+
+  @override
+  String get pokedex_detail_weight => 'WEIGHT';
+
+  @override
+  String get pokedex_detail_height => 'HEIGHT';
+
+  @override
+  String get pokedex_detail_category => 'CATEGORY';
+
+  @override
+  String get pokedex_detail_ability => 'ABILITY';
+
+  @override
+  String get pokedex_detail_male => 'MALE';
+
+  @override
+  String get pokedex_detail_female => 'FEMALE';
+
+  @override
+  String get pokedex_detail_weaknesses => 'Weaknesses';
+
+  @override
+  String get pokedex_detail_unknown => 'Unknown';
+
+  @override
   String get search_pokemon_hint => 'Search Pokémon...';
 }

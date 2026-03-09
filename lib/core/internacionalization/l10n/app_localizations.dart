@@ -218,6 +218,60 @@ abstract class AppLocalizations {
   /// **'Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación'**
   String get onboarding_description_profile;
 
+  /// No description provided for @pokedex_detail_gender.
+  ///
+  /// In es, this message translates to:
+  /// **'GÉNERO'**
+  String get pokedex_detail_gender;
+
+  /// No description provided for @pokedex_detail_weight.
+  ///
+  /// In es, this message translates to:
+  /// **'PESO'**
+  String get pokedex_detail_weight;
+
+  /// No description provided for @pokedex_detail_height.
+  ///
+  /// In es, this message translates to:
+  /// **'ALTURA'**
+  String get pokedex_detail_height;
+
+  /// No description provided for @pokedex_detail_category.
+  ///
+  /// In es, this message translates to:
+  /// **'CATEGORÍA'**
+  String get pokedex_detail_category;
+
+  /// No description provided for @pokedex_detail_ability.
+  ///
+  /// In es, this message translates to:
+  /// **'HABILIDAD'**
+  String get pokedex_detail_ability;
+
+  /// No description provided for @pokedex_detail_male.
+  ///
+  /// In es, this message translates to:
+  /// **'MASCULINO'**
+  String get pokedex_detail_male;
+
+  /// No description provided for @pokedex_detail_female.
+  ///
+  /// In es, this message translates to:
+  /// **'FEMENINO'**
+  String get pokedex_detail_female;
+
+  /// No description provided for @pokedex_detail_weaknesses.
+  ///
+  /// In es, this message translates to:
+  /// **'Debilidades'**
+  String get pokedex_detail_weaknesses;
+
+  /// No description provided for @pokedex_detail_unknown.
+  ///
+  /// In es, this message translates to:
+  /// **'Desconocido'**
+  String get pokedex_detail_unknown;
+
   /// No description provided for @search_pokemon_hint.
   ///
   /// In es, this message translates to:

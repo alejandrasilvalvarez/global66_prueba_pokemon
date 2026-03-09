@@ -19,5 +19,14 @@
   "onboarding_description_all_pokemon": "Accede a una amplia lista de Pokémon de todas las generaciones creadas por Nintendo",
   "onboarding_title_keep_updated":"Mantén tu Pokédex actualizada",
   "onboarding_description_profile": "Regístrate y guarda tu perfil, Pokémon favoritos, configuraciones y mucho más en la aplicación",
+  "pokedex_detail_gender": "GÉNERO",
+  "pokedex_detail_weight": "PESO",
+  "pokedex_detail_height": "ALTURA",
+  "pokedex_detail_category": "CATEGORÍA",
+  "pokedex_detail_ability": "HABILIDAD",
+  "pokedex_detail_male": "MASCULINO",
+  "pokedex_detail_female": "FEMENINO",
+  "pokedex_detail_weaknesses": "Debilidades",
+  "pokedex_detail_unknown": "Desconocido",
   "search_pokemon_hint": "Procurar Pókemon..."
 }
