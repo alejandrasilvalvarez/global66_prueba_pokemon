@@ -2,22 +2,24 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../data/datasources/dashboard_remote_datasource.dart';
 import '../data/datasources/dashboard_remote_datasource_impl.dart';
 import '../data/repositories/dashboard_repository_impl.dart';
 import '../domain/entities/pokedex_detail.dart';
 import '../domain/entities/pokemon_small_detail.dart';
+import '../domain/repositories/dashboard_repository.dart';
 import '../domain/usecases/fetch_pokedex_detail_usecase.dart';
 import '../domain/usecases/fetch_pokemons_use_case.dart';
 
 final Provider<Dio> dioProvider = Provider<Dio>((Ref ref) => Dio());
 
-final Provider<DashboardRemoteDatasourceImpl> dashboardDatasourceProvider =
-    Provider<DashboardRemoteDatasourceImpl>(
+final Provider<DashboardRemoteDatasource> dashboardDatasourceProvider =
+    Provider<DashboardRemoteDatasource>(
       (Ref ref) => DashboardRemoteDatasourceImpl(ref.read(dioProvider)),
     );
 
-final Provider<DashboardRepositoryImpl> dashboardRepositoryProvider =
-    Provider<DashboardRepositoryImpl>(
+final Provider<DashboardRepository> dashboardRepositoryProvider =
+    Provider<DashboardRepository>(
       (Ref ref) =>
           DashboardRepositoryImpl(ref.read(dashboardDatasourceProvider)),
     );
@@ -29,7 +31,7 @@ final Provider<FetchPokemonsUseCase> fetchPokemonsUseCaseProvider =
 
 final pokemonDetailProvider = FutureProvider.autoDispose
     .family<PokemonSmallDetail, int>((Ref ref, int id) async {
-      DashboardRepositoryImpl repo = ref.watch(dashboardRepositoryProvider);
+      DashboardRepository repo = ref.watch(dashboardRepositoryProvider);
       return repo.fetchPokemonSmallDetail(id);
     });
 

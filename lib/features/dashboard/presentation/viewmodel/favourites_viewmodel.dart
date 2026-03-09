@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/repositories/favourites_repository_impl.dart';
 import '../../di/favourites_providers.dart';
+import '../../domain/repositories/favourites_repository.dart';
 
 final NotifierProvider<FavoritesViewModel, Set<int>> favouritesProvider =
     NotifierProvider<FavoritesViewModel, Set<int>>(FavoritesViewModel.new);
@@ -14,7 +14,7 @@ class FavoritesViewModel extends Notifier<Set<int>> {
   }
 
   Future<void> loadFavorites() async {
-    FavouritesRepositoryImpl repo = ref.read(favouritesRepositoryProvider);
+    FavouritesRepository repo = ref.read(favouritesRepositoryProvider);
 
     Set<int> favorites = await repo.getFavorites();
 
@@ -22,7 +22,7 @@ class FavoritesViewModel extends Notifier<Set<int>> {
   }
 
   Future<void> toggleFavorite(int id) async {
-    FavouritesRepositoryImpl repo = ref.read(favouritesRepositoryProvider);
+    FavouritesRepository repo = ref.read(favouritesRepositoryProvider);
 
     Set<int> newFavorites = <int>{...state};
 
