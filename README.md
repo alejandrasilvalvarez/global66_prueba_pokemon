@@ -2,7 +2,7 @@
 
 Aplicación móvil desarrollada en **Flutter** que consume la [PokéAPI](https://pokeapi.co/) para mostrar un listado de Pokémon, sus detalles, agregar favoritos y funcionalidades futuras :DD. 
 
-* Detalle no menor a notar, se cambió el logo de la aplicación por una maleta pokemon jaja.
+* Detalle no menor a notar, se cambió el logo de la aplicación por una maleta pokemon ⚡️.
 
 <img width="115" height="112" alt="image" src="https://github.com/user-attachments/assets/5c457dec-ec37-4e95-aa1b-30016775ec99" />
 
