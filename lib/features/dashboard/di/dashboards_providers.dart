@@ -9,6 +9,7 @@ import '../domain/entities/pokedex_detail.dart';
 import '../domain/entities/pokemon_small_detail.dart';
 import '../domain/repositories/dashboard_repository.dart';
 import '../domain/usecases/fetch_pokedex_detail_usecase.dart';
+import '../domain/usecases/fetch_pokemon_small_detail_usecase.dart';
 import '../domain/usecases/fetch_pokemons_use_case.dart';
 
 final Provider<Dio> dioProvider = Provider<Dio>((Ref ref) => Dio());
@@ -29,10 +30,20 @@ final Provider<FetchPokemonsUseCase> fetchPokemonsUseCaseProvider =
       (Ref ref) => FetchPokemonsUseCase(ref.read(dashboardRepositoryProvider)),
     );
 
+final Provider<FetchPokemonSmallDetailUseCase>
+fetchPokemonSmallDetailUseCaseProvider =
+    Provider<FetchPokemonSmallDetailUseCase>(
+      (Ref ref) => FetchPokemonSmallDetailUseCase(
+        ref.read(dashboardRepositoryProvider),
+      ),
+    );
+
 final pokemonDetailProvider = FutureProvider.autoDispose
     .family<PokemonSmallDetail, int>((Ref ref, int id) async {
-      DashboardRepository repo = ref.watch(dashboardRepositoryProvider);
-      return repo.fetchPokemonSmallDetail(id);
+      FetchPokemonSmallDetailUseCase useCase = ref.watch(
+        fetchPokemonSmallDetailUseCaseProvider,
+      );
+      return useCase(id);
     });
 
 final pokedexDetailProvider = FutureProvider.autoDispose

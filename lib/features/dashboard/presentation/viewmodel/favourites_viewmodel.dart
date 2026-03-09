@@ -1,7 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../di/favourites_providers.dart';
-import '../../domain/repositories/favourites_repository.dart';
+import '../../domain/usecases/get_favourites_usecase.dart';
+import '../../domain/usecases/toggle_favourite_pokemon.dart';
 
 final NotifierProvider<FavoritesViewModel, Set<int>> favouritesProvider =
     NotifierProvider<FavoritesViewModel, Set<int>>(FavoritesViewModel.new);
@@ -14,26 +15,18 @@ class FavoritesViewModel extends Notifier<Set<int>> {
   }
 
   Future<void> loadFavorites() async {
-    FavouritesRepository repo = ref.read(favouritesRepositoryProvider);
+    GetFavoritesUseCase useCase = ref.read(getFavoritesUseCaseProvider);
 
-    Set<int> favorites = await repo.getFavorites();
+    Set<int> favorites = await useCase();
 
     state = favorites;
   }
 
   Future<void> toggleFavorite(int id) async {
-    FavouritesRepository repo = ref.read(favouritesRepositoryProvider);
+    ToggleFavoritePokemon useCase = ref.read(toggleFavoritePokemonProvider);
 
-    Set<int> newFavorites = <int>{...state};
+    Set<int> updatedFavorites = await useCase(id);
 
-    if (newFavorites.contains(id)) {
-      newFavorites.remove(id);
-    } else {
-      newFavorites.add(id);
-    }
-
-    state = newFavorites;
-
-    await repo.saveFavorites(newFavorites);
+    state = updatedFavorites;
   }
 }
