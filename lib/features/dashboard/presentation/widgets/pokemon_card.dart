@@ -20,6 +20,8 @@ class PokemonCard extends ConsumerWidget {
         (Set<int> favorites) => favorites.contains(pokemonId),
       ),
     );
+    String _capitalize(String s) =>
+        s.isEmpty ? s : s[0].toUpperCase() + s.substring(1).toLowerCase();
 
     return detail.when(
       data: (PokemonSmallDetail pokemon) {
@@ -74,18 +76,20 @@ class PokemonCard extends ConsumerWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              ...pokemon.types.map(
-                                (String type) => Padding(
+                              ...pokemon.types.map((String type) {
+                                PokemonTypeConfig tConfig =
+                                    PokemonTypeHelper.getConfig(type);
+                                return Padding(
                                   padding: const EdgeInsets.only(
                                     right: UILayout.small,
                                   ),
                                   child: PokemonTypeFlag(
-                                    iconPath: AssetsConstants.grass,
-                                    label: type,
-                                    typeColor: config.primaryColor,
+                                    iconPath: tConfig.iconPath,
+                                    label: _capitalize(type),
+                                    typeColor: tConfig.primaryColor,
                                   ),
-                                ),
-                              ),
+                                );
+                              }),
                             ],
                           ),
                         ],
