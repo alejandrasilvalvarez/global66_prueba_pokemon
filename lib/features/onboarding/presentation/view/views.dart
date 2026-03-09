@@ -2,11 +2,11 @@ library com.global66.onboarding.views;
 
 import 'package:flutter/material.dart' hide Colors;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/internacionalization/l10n/app_localizations.dart';
 import '../../../../core/internacionalization/locale_provider.dart';
+import '../../../../design_system/components/poke_bola_loader.dart';
 import '../../../../design_system/components/primary_button.dart';
 import '../../../../design_system/illustrations/assets_icons.dart';
 import '../../../../design_system/ui_constants/colors.dart';

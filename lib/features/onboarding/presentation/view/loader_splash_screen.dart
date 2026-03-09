@@ -10,7 +10,6 @@ class SplashScreen extends ConsumerStatefulWidget {
 class _SplashScreenState extends ConsumerState<SplashScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late final Animation<double> _fadeInAnimation;
 
   @override
   void initState() {
@@ -18,11 +17,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    );
-
-    _fadeInAnimation = CurvedAnimation(
-      parent: _controller,
-      curve: const Interval(0, 0.5, curve: Curves.easeIn),
     );
 
     _controller
@@ -47,21 +41,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
         context.go('/onboarding');
       }
     });
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: FadeTransition(
-          opacity: _fadeInAnimation,
-          child: RotationTransition(
-            turns: _controller,
-            child: SvgPicture.asset(
-              AssetsConstants.loaderSplash,
-              width: UILayout.xxxlarge,
-              height: UILayout.xxxlarge,
-            ),
-          ),
-        ),
-      ),
+      body: Center(child: PokeBolaLoader()),
     );
   }
 }

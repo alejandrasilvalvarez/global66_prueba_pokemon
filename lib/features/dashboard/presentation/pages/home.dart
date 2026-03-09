@@ -28,7 +28,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
       ),
       error: (Object error, StackTrace stack) =>
           ErrorLoadingHome(localizations: localizations),
-      loading: () => const Center(child: CircularProgressIndicator()),
+      loading: () => const Center(child: PokeBolaLoader()),
     );
   }
 }
