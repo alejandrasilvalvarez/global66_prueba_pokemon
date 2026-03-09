@@ -11,7 +11,7 @@ class PokemonCard extends ConsumerWidget {
     AppLocalizations localizations = AppLocalizations.of(context)!;
     int pokemonId = int.parse(id);
 
-    AsyncValue<PokemonDetail> detail = ref.watch(
+    AsyncValue<PokemonSmallDetail> detail = ref.watch(
       pokemonDetailProvider(pokemonId),
     );
 
@@ -22,7 +22,7 @@ class PokemonCard extends ConsumerWidget {
     );
 
     return detail.when(
-      data: (PokemonDetail pokemon) {
+      data: (PokemonSmallDetail pokemon) {
         String mainType = pokemon.types.isNotEmpty
             ? pokemon.types.first
             : 'normal';

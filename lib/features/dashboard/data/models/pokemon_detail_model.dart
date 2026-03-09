@@ -4,15 +4,15 @@ part 'pokemon_detail_model.freezed.dart';
 part 'pokemon_detail_model.g.dart';
 
 @freezed
-abstract class PokemonDetailModel with _$PokemonDetailModel {
-  const factory PokemonDetailModel({
+abstract class PokemonSmallDetailModel with _$PokemonSmallDetailModel {
+  const factory PokemonSmallDetailModel({
     required int id,
     required String name,
     required List<TypeSlotModel> types,
-  }) = _PokemonDetailModel;
+  }) = _PokemonSmallDetailModel;
 
-  factory PokemonDetailModel.fromJson(Map<String, dynamic> json) =>
-      _$PokemonDetailModelFromJson(json);
+  factory PokemonSmallDetailModel.fromJson(Map<String, dynamic> json) =>
+      _$PokemonSmallDetailModelFromJson(json);
 }
 
 @freezed

@@ -20,8 +20,9 @@ class DashboardRepositoryImpl implements DashboardRepository {
   }
 
   @override
-  Future<PokemonDetail> fetchPokemonDetail(int id) async {
-    PokemonDetailModel response = await remoteDatasource.fetchPokemonDetail(id);
+  Future<PokemonSmallDetail> fetchPokemonDetail(int id) async {
+    PokemonSmallDetailModel response = await remoteDatasource
+        .fetchPokemonDetail(id);
     return response.toEntity();
   }
 }

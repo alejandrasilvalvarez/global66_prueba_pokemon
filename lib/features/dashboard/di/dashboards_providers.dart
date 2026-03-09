@@ -25,8 +25,8 @@ final Provider<FetchPokemonsUseCase> fetchPokemonsUseCaseProvider =
       (Ref ref) => FetchPokemonsUseCase(ref.read(dashboardRepositoryProvider)),
     );
 
-final FutureProviderFamily<PokemonDetail, int> pokemonDetailProvider =
-    FutureProvider.family<PokemonDetail, int>((Ref ref, int id) async {
+final FutureProviderFamily<PokemonSmallDetail, int> pokemonDetailProvider =
+    FutureProvider.family<PokemonSmallDetail, int>((Ref ref, int id) async {
       DashboardRepositoryImpl repo = ref.read(dashboardRepositoryProvider);
       return repo.fetchPokemonDetail(id);
     });

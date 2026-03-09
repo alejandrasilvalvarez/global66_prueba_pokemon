@@ -3,5 +3,5 @@ import '../models/pokemon_list_response.dart';
 
 abstract class DashboardRemoteDatasource {
   Future<PokemonListResponse> fetchPokemons();
-  Future<PokemonDetailModel> fetchPokemonDetail(int id);
+  Future<PokemonSmallDetailModel> fetchPokemonDetail(int id);
 }

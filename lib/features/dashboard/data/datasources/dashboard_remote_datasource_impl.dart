@@ -18,11 +18,11 @@ class DashboardRemoteDatasourceImpl implements DashboardRemoteDatasource {
   }
 
   @override
-  Future<PokemonDetailModel> fetchPokemonDetail(int id) async {
+  Future<PokemonSmallDetailModel> fetchPokemonDetail(int id) async {
     Response<dynamic> response = await dio.get(
       'https://pokeapi.co/api/v2/pokemon/$id',
     );
 
-    return PokemonDetailModel.fromJson(response.data);
+    return PokemonSmallDetailModel.fromJson(response.data);
   }
 }
