@@ -30,22 +30,24 @@ class PokemonCard extends ConsumerWidget {
         PokemonTypeConfig config = PokemonTypeHelper.getConfig(
           PokemonType.fromString(mainType),
         );
-        return SizedBox(
-          height: 104,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: config.color.withAlpha(128),
-              borderRadius: BorderRadius.circular(UILayout.medium),
-            ),
-            child: Row(
-              children: <Widget>[
-                // LADO IZQUIERDO: Información
-                Expanded(
-                  flex: 3,
-                  child: GestureDetector(
-                    onTap: () {
-                      context.push('/pokemon/${pokemon.id}');
-                    },
+
+        return InkWell(
+          borderRadius: BorderRadius.circular(UILayout.medium),
+          onTap: () {
+            context.push('/pokemon/${pokemon.id}');
+          },
+          child: SizedBox(
+            height: 104,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: config.color.withAlpha(128),
+                borderRadius: BorderRadius.circular(UILayout.medium),
+              ),
+              child: Row(
+                children: <Widget>[
+                  // LADO IZQUIERDO: Información
+                  Expanded(
+                    flex: 3,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: UILayout.medium,
@@ -98,73 +100,74 @@ class PokemonCard extends ConsumerWidget {
                       ),
                     ),
                   ),
-                ),
 
-                // LADO DERECHO: Visual
-                Expanded(
-                  flex: 2,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    clipBehavior: Clip.none,
-                    children: <Widget>[
-                      DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: config.color,
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(UILayout.medium),
+                  // LADO DERECHO: Visual
+                  Expanded(
+                    flex: 2,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      clipBehavior: Clip.none,
+                      children: <Widget>[
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: config.color,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(UILayout.medium),
+                            ),
                           ),
                         ),
-                      ),
 
-                      // Icono de fondo (Marca de agua)
-                      Center(
-                        child: ShaderMask(
-                          shaderCallback: (Rect bounds) => RadialGradient(
-                            center: Alignment.topCenter,
-                            radius: 0.8,
-                            colors: <Color>[
-                              Colors.white.withAlpha(220),
-                              Colors.white.withAlpha(40),
-                            ],
-                            stops: const <double>[0, 1],
-                          ).createShader(bounds),
-                          blendMode: BlendMode.srcIn,
-                          child: SvgPicture.asset(
-                            config.icon,
+                        // Icono de fondo (Marca de agua)
+                        Center(
+                          child: ShaderMask(
+                            shaderCallback: (Rect bounds) => RadialGradient(
+                              center: Alignment.topCenter,
+                              radius: 0.8,
+                              colors: <Color>[
+                                Colors.white.withAlpha(220),
+                                Colors.white.withAlpha(40),
+                              ],
+                              stops: const <double>[0, 1],
+                            ).createShader(bounds),
+                            blendMode: BlendMode.srcIn,
+                            child: SvgPicture.asset(
+                              config.icon,
+                              height: UILayout.xxlarge,
+                            ),
+                          ),
+                        ),
+
+                        // Imagen del Pokémon
+                        Center(
+                          child: Image.network(
+                            imageUrl,
                             height: UILayout.xxlarge,
+                            fit: BoxFit.contain,
+                            cacheHeight: 200,
+                            cacheWidth: 200,
+                            errorBuilder: (_, __, ___) =>
+                                const SizedBox.shrink(),
                           ),
                         ),
-                      ),
 
-                      // Imagen del Pokémon
-                      Center(
-                        child: Image.network(
-                          imageUrl,
-                          height: UILayout.xxlarge,
-                          fit: BoxFit.contain,
-                          cacheHeight: 200,
-                          cacheWidth: 200,
-                          errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+                        // Botón de Favorito
+                        Positioned(
+                          top: UILayout.small,
+                          right: UILayout.small,
+                          child: FavouriteButton(
+                            isFavorite: isFavorite,
+                            onTap: () {
+                              ref
+                                  .read(favouritesProvider.notifier)
+                                  .toggleFavorite(int.parse(id));
+                            },
+                          ),
                         ),
-                      ),
-
-                      // Botón de Favorito
-                      Positioned(
-                        top: UILayout.small,
-                        right: UILayout.small,
-                        child: FavouriteButton(
-                          isFavorite: isFavorite,
-                          onTap: () {
-                            ref
-                                .read(favouritesProvider.notifier)
-                                .toggleFavorite(int.parse(id));
-                          },
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );
