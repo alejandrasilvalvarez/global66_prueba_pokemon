@@ -20,8 +20,6 @@ class PokemonCard extends ConsumerWidget {
         (Set<int> favorites) => favorites.contains(pokemonId),
       ),
     );
-    String _capitalize(String s) =>
-        s.isEmpty ? s : s[0].toUpperCase() + s.substring(1).toLowerCase();
 
     return detail.when(
       data: (PokemonSmallDetail pokemon) {
@@ -29,12 +27,14 @@ class PokemonCard extends ConsumerWidget {
             ? pokemon.types.first
             : 'normal';
 
-        PokemonTypeConfig config = PokemonTypeHelper.getConfig(mainType);
+        PokemonTypeConfig config = PokemonTypeHelper.getConfig(
+          PokemonType.fromString(mainType),
+        );
         return SizedBox(
           height: 104,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: config.transparentColor,
+              color: config.color.withAlpha(128),
               borderRadius: BorderRadius.circular(UILayout.medium),
             ),
             child: Row(
@@ -78,15 +78,17 @@ class PokemonCard extends ConsumerWidget {
                             children: <Widget>[
                               ...pokemon.types.map((String type) {
                                 PokemonTypeConfig tConfig =
-                                    PokemonTypeHelper.getConfig(type);
+                                    PokemonTypeHelper.getConfig(
+                                      PokemonType.fromString(type),
+                                    );
                                 return Padding(
                                   padding: const EdgeInsets.only(
                                     right: UILayout.small,
                                   ),
                                   child: PokemonTypeFlag(
-                                    iconPath: tConfig.iconPath,
-                                    label: _capitalize(type),
-                                    typeColor: tConfig.primaryColor,
+                                    iconPath: tConfig.icon,
+                                    label: tConfig.label,
+                                    typeColor: tConfig.color,
                                   ),
                                 );
                               }),
@@ -107,7 +109,7 @@ class PokemonCard extends ConsumerWidget {
                     children: <Widget>[
                       DecoratedBox(
                         decoration: BoxDecoration(
-                          color: config.primaryColor,
+                          color: config.color,
                           borderRadius: const BorderRadius.all(
                             Radius.circular(UILayout.medium),
                           ),
@@ -128,7 +130,7 @@ class PokemonCard extends ConsumerWidget {
                           ).createShader(bounds),
                           blendMode: BlendMode.srcIn,
                           child: SvgPicture.asset(
-                            config.iconPath,
+                            config.icon,
                             height: UILayout.xxlarge,
                           ),
                         ),

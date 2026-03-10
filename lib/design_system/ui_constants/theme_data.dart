@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide Colors;
-import '../../design_system/ui_constants/colors.dart';
-import '../../design_system/ui_constants/layout.dart';
+import 'colors.dart';
+import 'layout.dart';
 
 class AppTheme {
   AppTheme._();

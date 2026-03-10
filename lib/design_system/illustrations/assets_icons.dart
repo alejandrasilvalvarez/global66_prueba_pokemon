@@ -1,3 +1,5 @@
+import '../../core/ui/pokemon_type.dart';
+
 class AssetsConstants {
   // Paths base
   static const String _elementsPath = 'assets/illustrations_elements';
@@ -40,43 +42,7 @@ class AssetsConstants {
 
   /// Devuelve la ruta del asset SVG basado en el tipo de Pokémon.
   static String getIconByType(String type) {
-    switch (type.toLowerCase()) {
-      case 'bug':
-        return bug;
-      case 'dark':
-        return dark;
-      case 'dragon':
-        return dragon;
-      case 'electric':
-        return electric;
-      case 'fairy':
-        return fairy;
-      case 'fighting':
-        return fighting;
-      case 'fire':
-        return fire;
-      case 'flying':
-        return flying;
-      case 'ghost':
-        return ghost;
-      case 'grass':
-        return grass;
-      case 'ground':
-        return ground;
-      case 'normal':
-        return normal;
-      case 'poison':
-        return poison;
-      case 'psychic':
-        return psychic;
-      case 'rock':
-        return rock;
-      case 'steel':
-        return steel;
-      case 'water':
-        return water;
-      default:
-        return normal;
-    }
+    final pokemonType = PokemonType.fromString(type);
+    return '$_elementsPath/${pokemonType.apiKey}.svg';
   }
 }

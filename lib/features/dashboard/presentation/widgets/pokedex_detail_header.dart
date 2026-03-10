@@ -23,7 +23,7 @@ class PokemonHeader extends StatelessWidget {
         ClipPath(
           clipper: _HeaderClipper(),
           child: DecoratedBox(
-            decoration: BoxDecoration(color: config.primaryColor),
+            decoration: BoxDecoration(color: config.color),
             child: const SizedBox(
               width: double.infinity,
               height: UILayout.bannerHeaderHeight,
@@ -48,7 +48,7 @@ class PokemonHeader extends StatelessWidget {
               ).createShader(bounds),
               blendMode: BlendMode.srcIn,
               child: SvgPicture.asset(
-                config.iconPath,
+                config.icon,
                 height: UILayout.bannerTypeIconHeight,
               ),
             ),

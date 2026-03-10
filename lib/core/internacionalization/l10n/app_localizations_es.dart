@@ -106,5 +106,17 @@ class AppLocalizationsEs extends AppLocalizations {
   String get pokedex_detail_unknown => 'Desconocido';
 
   @override
+  String get filter_title => 'Filtra por tus preferencias';
+
+  @override
+  String get filter_type => 'Tipo';
+
+  @override
+  String get filter_apply => 'Aplicar';
+
+  @override
+  String get filter_cancel => 'Cancelar';
+
+  @override
   String get search_pokemon_hint => 'Procurar Pókemon...';
 }

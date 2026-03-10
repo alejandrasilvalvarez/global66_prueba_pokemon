@@ -7,7 +7,9 @@ class PokedexDetailContent extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     String mainType = pokemon.types.isNotEmpty ? pokemon.types.first : 'normal';
-    PokemonTypeConfig config = PokemonTypeHelper.getConfig(mainType);
+    PokemonTypeConfig config = PokemonTypeHelper.getConfig(
+      PokemonType.fromString(mainType),
+    );
 
     bool isFavorite = ref.watch(
       favouritesProvider.select(

@@ -272,6 +272,30 @@ abstract class AppLocalizations {
   /// **'Desconocido'**
   String get pokedex_detail_unknown;
 
+  /// No description provided for @filter_title.
+  ///
+  /// In es, this message translates to:
+  /// **'Filtra por tus preferencias'**
+  String get filter_title;
+
+  /// No description provided for @filter_type.
+  ///
+  /// In es, this message translates to:
+  /// **'Tipo'**
+  String get filter_type;
+
+  /// No description provided for @filter_apply.
+  ///
+  /// In es, this message translates to:
+  /// **'Aplicar'**
+  String get filter_apply;
+
+  /// No description provided for @filter_cancel.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelar'**
+  String get filter_cancel;
+
   /// No description provided for @search_pokemon_hint.
   ///
   /// In es, this message translates to:

@@ -6,13 +6,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/internacionalization/l10n/app_localizations.dart';
-import '../../../../core/ui/pokemon_type_helper.dart';
+import '../../../../core/ui/pokemon_type.dart';
+
 import '../../../../design_system/components/error_illustration_home.dart';
 import '../../../../design_system/components/favourite_button.dart';
 import '../../../../design_system/components/pokemon_card_shimmer.dart';
 import '../../../../design_system/components/pokemon_type_flag.dart';
 import '../../../../design_system/components/primary_button.dart';
+import '../../../../design_system/configs/pokemon_type_config.dart';
 import '../../../../design_system/extensions/pokedex_text_styles.dart';
+import '../../../../design_system/helpers/pokemon_type_helpers.dart';
 import '../../../../design_system/illustrations/assets_icons.dart';
 import '../../../../design_system/ui_constants/border_radius.dart';
 import '../../../../design_system/ui_constants/colors.dart';
@@ -28,3 +31,4 @@ part 'pokemon_card.dart';
 part 'pokedex_detail.dart';
 part 'pokedex_detail_header.dart';
 part 'pokedex_detail_body.dart';
+part 'type_filter_bottom_sheet.dart';

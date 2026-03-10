@@ -8,7 +8,7 @@ import 'core/environment/environment.dart';
 import 'core/internacionalization/l10n/app_localizations.dart';
 import 'core/internacionalization/locale_provider.dart';
 import 'core/routes/routes.dart';
-import 'core/ui/theme_data.dart';
+import 'design_system/ui_constants/theme_data.dart';
 
 void main() async {
   await runZonedGuarded(

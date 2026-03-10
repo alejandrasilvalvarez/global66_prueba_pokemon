@@ -28,5 +28,9 @@
   "pokedex_detail_female": "FEMENINO",
   "pokedex_detail_weaknesses": "Debilidades",
   "pokedex_detail_unknown": "Desconocido",
+  "filter_title": "Filtra por tus preferencias",
+  "filter_type": "Tipo",
+  "filter_apply": "Aplicar",
+  "filter_cancel": "Cancelar",
   "search_pokemon_hint": "Procurar Pókemon..."
 }

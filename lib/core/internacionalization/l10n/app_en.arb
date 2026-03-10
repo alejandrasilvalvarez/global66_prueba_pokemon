@@ -28,5 +28,9 @@
   "pokedex_detail_female": "FEMALE",
   "pokedex_detail_weaknesses": "Weaknesses",
   "pokedex_detail_unknown": "Unknown",
+  "filter_title": "Filter by your preferences",
+  "filter_type": "Type",
+  "filter_apply": "Apply",
+  "filter_cancel": "Cancel",
   "search_pokemon_hint": "Search Pokémon..."
 }

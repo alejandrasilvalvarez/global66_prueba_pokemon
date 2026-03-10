@@ -34,11 +34,12 @@ class PokedexDetailBody extends ConsumerWidget {
             Row(
               spacing: UILayout.small,
               children: pokemon.types.map((String type) {
-                PokemonTypeConfig tConfig = PokemonTypeHelper.getConfig(type);
+                PokemonTypeConfig tConfig =
+                    PokemonTypeHelper.getConfig(PokemonType.fromString(type));
                 return PokemonTypeFlag(
-                  iconPath: tConfig.iconPath,
-                  label: _capitalize(type),
-                  typeColor: tConfig.primaryColor,
+                  iconPath: tConfig.icon,
+                  label: tConfig.label,
+                  typeColor: tConfig.color,
                 );
               }).toList(),
             ),
@@ -110,11 +111,12 @@ class PokedexDetailBody extends ConsumerWidget {
             Row(
               spacing: UILayout.small,
               children: pokemon.weaknesses.map((String type) {
-                PokemonTypeConfig tConfig = PokemonTypeHelper.getConfig(type);
+                PokemonTypeConfig tConfig =
+                    PokemonTypeHelper.getConfig(PokemonType.fromString(type));
                 return PokemonTypeFlag(
-                  iconPath: tConfig.iconPath,
-                  label: _capitalize(type),
-                  typeColor: tConfig.primaryColor,
+                  iconPath: tConfig.icon,
+                  label: tConfig.label,
+                  typeColor: tConfig.color,
                 );
               }).toList(),
             ),

@@ -32,7 +32,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
   }
 }
 
-class LoadedDataPokemonsList extends StatelessWidget {
+class LoadedDataPokemonsList extends ConsumerStatefulWidget {
   const LoadedDataPokemonsList({
     required this.searchController,
     required this.localizations,
@@ -45,54 +45,95 @@ class LoadedDataPokemonsList extends StatelessWidget {
   final AppLocalizations localizations;
 
   @override
-  Widget build(BuildContext context) => Column(
-    children: <Widget>[
-      Spacing.spacingV16,
-      Row(
-        children: <Widget>[
-          Expanded(
-            child: TextField(
-              controller: searchController,
-              decoration: InputDecoration(
-                hintText: localizations.search_pokemon_hint,
-                prefixIcon: const Icon(Icons.search_outlined),
+  ConsumerState<LoadedDataPokemonsList> createState() =>
+      _LoadedDataPokemonsListState();
+}
+
+class _LoadedDataPokemonsListState
+    extends ConsumerState<LoadedDataPokemonsList> {
+  Set<String> _selectedTypes = <String>{};
+
+  Future<void> _openFilterSheet() async {
+    Set<String>? result = await showTypeFilterBottomSheet(
+      context,
+      initialSelected: _selectedTypes,
+    );
+    if (result != null) {
+      setState(() => _selectedTypes = result);
+    }
+  }
+
+  /// Filtra los pokémon según los tipos seleccionados.
+  /// Si no hay filtros, retorna la lista completa.
+  List<Pokemon> _filteredPokemons() {
+    if (_selectedTypes.isEmpty) return widget.pokemons;
+
+    return widget.pokemons.where((Pokemon pokemon) {
+      AsyncValue<PokemonSmallDetail> detail = ref.read(
+        pokemonDetailProvider(pokemon.id),
+      );
+      return detail.whenOrNull(
+            data: (PokemonSmallDetail d) => d.types.any(
+              (String type) => _selectedTypes.contains(type.toLowerCase()),
+            ),
+          ) ??
+          false;
+    }).toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    List<Pokemon> pokemons = _filteredPokemons();
+
+    return Column(
+      children: <Widget>[
+        Spacing.spacingV16,
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: TextField(
+                controller: widget.searchController,
+                decoration: InputDecoration(
+                  hintText: widget.localizations.search_pokemon_hint,
+                  prefixIcon: const Icon(Icons.search_outlined),
+                ),
               ),
             ),
-          ),
-          Spacing.spacingH16,
-          DecoratedBox(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-              border: Border.all(color: BorderColors.defaultColor.color),
-            ),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.search, color: IconColors.disabled.color),
-              padding: const EdgeInsets.all(UILayout.mediumText),
-              constraints: const BoxConstraints(),
-            ),
-          ),
-        ],
-      ),
-      Spacing.spacingV16,
-      //Pokemon List
-      Expanded(
-        child: ListView.builder(
-          padding: const EdgeInsets.symmetric(vertical: UILayout.small),
-          itemCount: pokemons.length,
-          itemBuilder: (BuildContext context, int index) {
-            Pokemon pokemon = pokemons[index];
-            return Padding(
-              padding: const EdgeInsets.only(bottom: UILayout.smallText),
-              child: PokemonCard(
-                id: pokemon.id.toString(),
-                imageUrl: pokemon.imageUrl,
+            Spacing.spacingH16,
+            DecoratedBox(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                border: Border.all(color: BorderColors.defaultColor.color),
               ),
-            );
-          },
+              child: IconButton(
+                onPressed: _openFilterSheet,
+                icon: Icon(Icons.search, color: IconColors.disabled.color),
+                padding: const EdgeInsets.all(UILayout.mediumText),
+                constraints: const BoxConstraints(),
+              ),
+            ),
+          ],
         ),
-      ),
-    ],
-  );
+        Spacing.spacingV16,
+        //Pokemon List
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.symmetric(vertical: UILayout.small),
+            itemCount: pokemons.length,
+            itemBuilder: (BuildContext context, int index) {
+              Pokemon pokemon = pokemons[index];
+              return Padding(
+                padding: const EdgeInsets.only(bottom: UILayout.smallText),
+                child: PokemonCard(
+                  id: pokemon.id.toString(),
+                  imageUrl: pokemon.imageUrl,
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
 }
