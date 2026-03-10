@@ -104,6 +104,18 @@ abstract class AppLocalizations {
   /// **'Comenzar'**
   String get begin;
 
+  /// No description provided for @error_title_no_pokemons.
+  ///
+  /// In es, this message translates to:
+  /// **'No hay pokemones :c'**
+  String get error_title_no_pokemons;
+
+  /// No description provided for @error_desc_no_pokemons.
+  ///
+  /// In es, this message translates to:
+  /// **'Por favor selecciona otro filtro'**
+  String get error_desc_no_pokemons;
+
   /// No description provided for @error_title_coming_soon.
   ///
   /// In es, this message translates to:

@@ -1,5 +1,7 @@
 {
   "begin":"Begin",
+  "error_title_no_pokemons":"There are no pokemons :c",
+  "error_desc_no_pokemons":"please try another selection",
   "error_title_coming_soon": "Coming soon!",
   "error_description_coming_soon": "We're working to bring you this section. Check back later to discover all the new features.",
   "error_title_no_favourite": "You haven't marked any Pokémon as favorites.",

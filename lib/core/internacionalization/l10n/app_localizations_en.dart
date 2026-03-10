@@ -12,6 +12,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get begin => 'Begin';
 
   @override
+  String get error_title_no_pokemons => 'There are no pokemons :c';
+
+  @override
+  String get error_desc_no_pokemons => 'please try another selection';
+
+  @override
   String get error_title_coming_soon => 'Coming soon!';
 
   @override
