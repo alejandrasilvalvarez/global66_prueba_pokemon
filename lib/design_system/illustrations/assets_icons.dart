@@ -42,7 +42,7 @@ class AssetsConstants {
 
   /// Devuelve la ruta del asset SVG basado en el tipo de Pokémon.
   static String getIconByType(String type) {
-    final pokemonType = PokemonType.fromString(type);
+    PokemonType pokemonType = PokemonType.fromString(type);
     return '$_elementsPath/${pokemonType.apiKey}.svg';
   }
 }
