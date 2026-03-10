@@ -13,6 +13,7 @@ import '../../../../design_system/components/favourite_button.dart';
 import '../../../../design_system/components/pokemon_card_shimmer.dart';
 import '../../../../design_system/components/pokemon_type_flag.dart';
 import '../../../../design_system/components/primary_button.dart';
+import '../../../../design_system/components/secondary_button.dart';
 import '../../../../design_system/configs/pokemon_type_config.dart';
 import '../../../../design_system/extensions/pokedex_text_styles.dart';
 import '../../../../design_system/helpers/pokemon_type_helpers.dart';
