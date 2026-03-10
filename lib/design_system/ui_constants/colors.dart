@@ -61,12 +61,12 @@ enum BorderColors {
   final Color color;
 }
 
-enum TapBar {
+enum TapBarColor {
   borderTop(Color.fromRGBO(224, 224, 224, 1)),
   iconActive(Color.fromRGBO(21, 101, 192, 1)),
   iconDefault(Color.fromRGBO(66, 66, 66, 1));
 
-  const TapBar(this.color);
+  const TapBarColor(this.color);
   final Color color;
 }
 

@@ -19,7 +19,7 @@ class MainScreen extends ConsumerWidget {
       body: SafeArea(child: navigationShell),
       bottomNavigationBar: DecoratedBox(
         decoration: BoxDecoration(
-          color: TapBar.borderTop.color,
+          color: TapBarColor.borderTop.color,
           border: Border(
             top: BorderSide(color: Colors.black.withValues(alpha: 0.1)),
           ),
@@ -38,8 +38,8 @@ class MainScreen extends ConsumerWidget {
             elevation: 0,
             backgroundColor: Colors.white,
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: TapBar.iconActive.color,
-            unselectedItemColor: TapBar.iconDefault.color,
+            selectedItemColor: TapBarColor.iconActive.color,
+            unselectedItemColor: TapBarColor.iconDefault.color,
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
             unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500),
             currentIndex: selectedIndex,
