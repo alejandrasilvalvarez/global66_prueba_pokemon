@@ -1,37 +1,26 @@
 part of com.global66.home.pages;
 
-class HomeView extends ConsumerStatefulWidget {
+class HomeView extends ConsumerWidget {
   const HomeView({super.key});
 
   @override
-  ConsumerState<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends ConsumerState<HomeView> {
-  TextEditingController searchController = TextEditingController();
-  bool hasErrorInput = false;
-  String serverError = '';
-
-  @override
-  Widget build(BuildContext context) {
-    AppLocalizations localizations = AppLocalizations.of(context)!;
+  Widget build(BuildContext context, WidgetRef ref) {
     DashboardState state = ref.watch(dashboardViewModelProvider);
+    AppLocalizations l10n = AppLocalizations.of(context)!;
 
     return state.when(
       loading: () => const Center(child: PokeBolaLoader()),
-      error: (String message) => ErrorLoadingHome(localizations: localizations),
-      data: (List<Pokemon> pokemons) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: UILayout.medium),
-        child: LoadedDataPokemonsList(pokemons: pokemons),
+      error: (String message) => ErrorLoadingHome(localizations: l10n),
+      data: (_) => const Padding(
+        padding: EdgeInsets.symmetric(horizontal: UILayout.medium),
+        child: LoadedDataPokemonsList(),
       ),
     );
   }
 }
 
 class LoadedDataPokemonsList extends ConsumerWidget {
-  const LoadedDataPokemonsList({required this.pokemons, super.key});
-
-  final List<Pokemon> pokemons;
+  const LoadedDataPokemonsList({super.key});
 
   Future<void> _openFilterSheet(BuildContext context, WidgetRef ref) async {
     Set<String> selected = ref.read(pokemonTypeFilterProvider);
@@ -49,24 +38,8 @@ class LoadedDataPokemonsList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLocalizations l10n = AppLocalizations.of(context)!;
-    Set<String> selectedTypes = ref.watch(pokemonTypeFilterProvider);
 
-    List<Pokemon> filtered = pokemons.where((Pokemon pokemon) {
-      if (selectedTypes.isEmpty) {
-        return true;
-      }
-
-      AsyncValue<PokemonSmallDetail> detail = ref.watch(
-        pokemonDetailProvider(pokemon.id),
-      );
-
-      return detail.whenOrNull(
-            data: (PokemonSmallDetail d) => d.types.any(
-              (String type) => selectedTypes.contains(type.toLowerCase()),
-            ),
-          ) ??
-          false;
-    }).toList();
+    List<Pokemon> pokemons = ref.watch(filteredPokemonsProvider);
 
     return Column(
       children: <Widget>[
@@ -75,6 +48,9 @@ class LoadedDataPokemonsList extends ConsumerWidget {
           children: <Widget>[
             Expanded(
               child: TextField(
+                onChanged: (String value) {
+                  ref.read(pokemonSearchProvider.notifier).setQuery(value);
+                },
                 decoration: InputDecoration(
                   hintText: l10n.search_pokemon_hint,
                   prefixIcon: const Icon(Icons.search_outlined),
@@ -96,7 +72,7 @@ class LoadedDataPokemonsList extends ConsumerWidget {
           ],
         ),
         Spacing.spacingV16,
-        if (filtered.isEmpty)
+        if (pokemons.isEmpty)
           Expanded(
             child: Center(
               child: ErrorIllustrationHome(
@@ -110,9 +86,9 @@ class LoadedDataPokemonsList extends ConsumerWidget {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(vertical: UILayout.small),
-              itemCount: filtered.length,
+              itemCount: pokemons.length,
               itemBuilder: (BuildContext context, int index) {
-                Pokemon pokemon = filtered[index];
+                Pokemon pokemon = pokemons[index];
 
                 return Padding(
                   padding: const EdgeInsets.only(bottom: UILayout.smallText),

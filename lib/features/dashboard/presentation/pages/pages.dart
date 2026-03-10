@@ -13,7 +13,6 @@ import '../../../../design_system/ui_constants/spacing.dart';
 import '../../di/dashboards_providers.dart';
 import '../../domain/entities/pokedex_detail.dart';
 import '../../domain/entities/pokemon.dart';
-import '../../domain/entities/pokemon_small_detail.dart';
 import '../state/dashboard_state.dart';
 import '../viewmodel/dashboard_viewmodel.dart';
 import '../viewmodel/pokemon_filter_providers.dart';
