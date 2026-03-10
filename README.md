@@ -309,9 +309,9 @@ Se creó un **design system** centralizado en la carpeta `design_system/` para m
 
 - **`UILayout`** — Constantes de layout y tamaños (`small`, `medium`, `large`, `xxlarge`, `bannerHeaderHeight`, etc.). Permite que si se necesita ajustar un espaciado o tamaño, se haga en un solo lugar.
 
-- **`Spacing`** — Widgets de espaciado pre-construidos (`spacingV4`, `spacingV8`, `spacingV16`, `spacingV24`, etc.) para evitar crear `SizedBox` repetitivos en cada widget.
+- **`Spacing`** — Widgets de espaciado pre-construidos (`spacingV4`, `spacingV8`, `spacingV16`, `spacingV24`, etc.) para evitar crear `SizedBox` repetitivos en cada widget. Además de seguir estandares en desarrollo movil.
 
-- **`Colors`** — Paleta de colores extraída en enums (`TextColors`, `IconColors`, `BorderColors`, `BackgroundColors`), evitando colores hardcodeados como `Color(0xFF...)` dispersos en el código.
+- **`Colors`** — Paleta de colores extraída en enums (`TextColors`, `IconColors`, `BorderColors`, `BackgroundColors`), evitando colores hardcodeados como `Color(0xFF...)` dispersos en el código. Cabe aclarar, se extrajeron los colores por los que se encuentran en el figma, pero, sería mejor practica desd ediseño centralziar más el manejo de colores, pues, se tienen colores como constantes, otros como mapas, otros que peuden ser llamados enums.
 
 - **`BorderRadius`** — Constantes de bordes redondeados reutilizables (`radius8`, etc.).
 
