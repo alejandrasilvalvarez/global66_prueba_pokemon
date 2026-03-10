@@ -1,20 +1,14 @@
 # 🔴 Pokédex - Global66 Prueba Técnica
 
-Aplicación móvil desarrollada en **Flutter** que consume la [PokéAPI](https://pokeapi.co/) para mostrar un listado de Pokémon, sus detalles, agregar favoritos y funcionalidades futuras :DD. 
+Aplicación móvil desarrollada en **Flutter** que consume la [PokéAPI](https://pokeapi.co/) para mostrar un listado de Pokémon, sus detalles, agregar favoritos y funcionalidades futuras :DD.
 
-* Detalle no menor a notar, se cambió el logo de la aplicación por una maleta pokemon ⚡️.
+- Detalle no menor a notar, se cambió el logo de la aplicación por una maleta pokemon ⚡️.
 
 <img width="115" height="112" alt="image" src="https://github.com/user-attachments/assets/5c457dec-ec37-4e95-aa1b-30016775ec99" />
 
-
-
 https://github.com/user-attachments/assets/8e2e9b91-3815-4bbf-bfb5-e2de56813bbc
 
-
-
 https://github.com/user-attachments/assets/09f81538-bad6-4fc1-a873-b898b1f2fa2a
-
-
 
 ---
 
@@ -308,6 +302,26 @@ API remota (Dio) / Almacenamiento local (FlutterSecureStorage)
 ### ¿Por qué Clean Architecture + MVVM?
 
 Permite amplia división de responsabilidades, protege la logica de negocio, elimina logica pesada de los widgets de Flutter, permite optimización en renderización, además de escalabilidad.
+
+### Design System y Decisiones de Diseño
+
+Se creó un **design system** centralizado en la carpeta `design_system/` para mantener consistencia visual en toda la aplicación y evitar valores hardcodeados en los widgets:
+
+- **`UILayout`** — Constantes de layout y tamaños (`small`, `medium`, `large`, `xxlarge`, `bannerHeaderHeight`, etc.). Permite que si se necesita ajustar un espaciado o tamaño, se haga en un solo lugar.
+
+- **`Spacing`** — Widgets de espaciado pre-construidos (`spacingV4`, `spacingV8`, `spacingV16`, `spacingV24`, etc.) para evitar crear `SizedBox` repetitivos en cada widget.
+
+- **`Colors`** — Paleta de colores extraída en enums (`TextColors`, `IconColors`, `BorderColors`, `BackgroundColors`), evitando colores hardcodeados como `Color(0xFF...)` dispersos en el código.
+
+- **`BorderRadius`** — Constantes de bordes redondeados reutilizables (`radius8`, etc.).
+
+- **`ThemeData`** — Se personalizó el `AppTheme.lightTheme` para definir estilos globales de la app (tipografía, colores de fondo, estilos de input, botones etc.) de forma centralizada.
+
+- **Componentes reutilizables** — Se extrajeron componentes comunes como `PrimaryButton`, `FavouriteButton`, `PokemonTypeFlag`, `PokemonCardShimmer`, `PokeBolaLoader` y `ErrorIllustrationHome` para mantener consistencia y evitar duplicación.
+
+- **`PokemonTypeHelper`** — Mapa centralizado que asocia cada tipo de Pokémon con su color, color transparente e icono SVG. Esto permite que las cards, los flags y los headers del detalle usen los mismos colores de forma consistente.
+
+Estas decisiones permiten que cualquier cambio de diseño (por ejemplo, ajustar el spacing general o cambiar el color primario) se haga en **un solo archivo** sin tener que buscar y reemplazar valores en decenas de widgets.
 
 ---
 
